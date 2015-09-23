@@ -1,0 +1,47 @@
+  <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+               
+          
+ <section id="main-content">
+          <section class="wrapper">
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        Farmer
+    </div>
+
+    <div class="panel-body">
+        <div class="wizard">
+            <a ui-sref=".basic"
+               ui-sref-active="active">
+                Basic Information
+            </a>
+             <a ui-sref=".farmerDependantView"
+                 ui-sref-active="active">
+                Dependants
+            </a>
+            <a ui-sref=".farmDetails"
+               ui-sref-active="active">
+                Farm Details
+            </a>
+           
+            <a ui-sref=".farmLocation"
+                 ui-sref-active="active">
+                Farm Location
+            </a>
+        </div>
+
+        <div ui-view></div>
+     
+        
+    </div>
+
+</div>
+
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+        </div>

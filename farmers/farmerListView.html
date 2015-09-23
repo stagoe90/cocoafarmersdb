@@ -1,0 +1,57 @@
+   <div id="page-wrapper">
+
+            <div class="container-fluid">  
+ <section id="main-content">
+          <section class="wrapper">
+
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Farmer List
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Farmer Number</td>
+                <td>First Name</td>
+                <td>Surname</td>
+                <td>Date of Birth</td>
+                 <td>Gender</td>
+                <td>ID Type</td>
+                <td>ID No.</td>
+                <td>Region District</td>
+                 <td>Contact</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="product in vm.products">
+                
+                <td>
+                    <a ui-sref="productDetail({productId: product.productId})">
+                    {{ product.productName}}</a>
+                </td>
+                <td>{{ product.productCode }}</td>
+                <td>{{ product.releaseDate | date }}</td>
+                <td>{{ product.price | currency }}</td>
+                 <td>{{ product.productCode }}</td>
+                <td>{{ product.releaseDate | date }}</td>
+                <td>{{ product.price | currency }}</td>
+                  <td>{{ product.releaseDate | date }}</td>
+                <td>{{ product.price | currency }}</td>
+                <td>
+                    <a class="btn btn-warning"
+                       ui-sref="productEdit.info({productId: product.productId})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

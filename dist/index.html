@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="cocoafarmersdb">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  
+   
+  
+  
+   
+
+    <!-- Custom CSS -->
+    
+
+    <!-- Morris Charts CSS -->
+    
+
+    <!-- Custom Fonts -->
+    
+  
+<link rel="stylesheet" href="app.full.min.css"></head>
+<body>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  
+
+
+
+
+  <!-- JS from Bower Components -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  
+  <!-- Add New Component JS Above -->
+  
+    <!-- jQuery -->
+  
+ <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Farmers Database</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                   <li class="dropdown">
+                    <a href="#"><i class="fa fa-user"></i> Ghana Cocoa Board</a>
+                  <!--  <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul> -->
+                </li>
+            </ul>
+                
+                
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a ui-sref="farmerlistview" ui-sref-active="active"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                  <!--  <li>
+                        <a ui-sref="farmerlistview" ui-sref-active="active"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    </li>
+                    <li>
+                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    </li>-->
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Farmer <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="demo" class="collapse">
+                            <li>
+                                <a ui-sref="farmerlistView" ui-sref-active="active">Farmer List</a>
+                            </li>
+                            <li>
+                                <a ui-sref="farmerEditView" ui-sref-active="active">Add Farmer</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Setup <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="" class="collapse">
+                            <li>
+                                <a ui-sref="" "="" ui-sref-active="active">Regions</a>
+                            </li>
+                            <li>
+                                <a ui-sref="" ui-sref-active="active">Districts</a>
+                            </li>
+                             <li>
+                                <a ui-sref="" ui-sref-active="active">Farmer Types</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                   <!-- <li>
+                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
+                    </li>
+                    <li>
+                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+      
+        <!-- /#page-wrapper -->
+ 
+        <div ui-view=""></div>
+
+    </div>
+      
+<script src="app.full.min.js"></script></body>
+</html>

@@ -1,0 +1,191 @@
+  <div id="page-wrapper">
+  <div class="container-fluid">     
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="productForm"
+      novalidate>
+    <fieldset>
+        <legend>Farm Details</legend>
+       <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductName.$invalid &&
+                                    productForm.inputProductName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputProductName">Farm Number</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductName"
+                       name="inputProductName"
+                       type="text"
+                       placeholder="Farm Number (required)"
+                       ng-model="vm.product.FarmNumber"
+                       required
+                        ng-minlength="4"
+                        ng-maxlength="12"/>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="productForm.inputProductName.$error.required">
+                   Farm Number is required
+                </span>
+                <span ng-show="productForm.inputProductName.$error.minlength">
+                    Validation Message.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.maxlength">
+                    Validation Message..
+                </span>
+            </span>
+        </div>
+           <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductName.$invalid &&
+                                    productForm.inputProductName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputProductName">Region</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductName"
+                       name="inputProductName"
+                       type="text"
+                       placeholder="Region (required)"
+                       ng-model="vm.product.District"
+                       required
+                        />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="productForm.inputProductName.$error.required">
+                  Region is required  
+                </span>
+                <span ng-show="productForm.inputProductName.$error.minlength">
+                    Validation Message.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.maxlength">
+                    Validation Message..
+                </span>
+            </span>
+        </div>
+        
+        
+            <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductName.$invalid &&
+                                    productForm.inputProductName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputProductName">District</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductName"
+                       name="inputProductName"
+                       type="text"
+                       placeholder="District (required)"
+                       ng-model="vm.product.District"
+                       required
+                       />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="productForm.inputProductName.$error.required">
+                  District is required  
+                </span>
+                <span ng-show="productForm.inputProductName.$error.minlength">
+                    Validation Message.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.maxlength">
+                    Validation Message..
+                </span>
+            </span>
+        </div>
+        
+        <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
+                                    productForm.inputProductCode.$dirty}">
+            <label class="col-md-2 control-label" for="inputProductCode">Town</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductCode"
+                       name="inputProductCode"
+                      type="text"
+                       placeholder="Town"
+                       ng-model="vm.product.Town"
+                       required
+                       />
+            </div>
+           
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductName.$invalid &&
+                                    productForm.inputProductName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputProductName">Year of Establishment</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductName"
+                       name="inputProductName"
+                       type="text"
+                       placeholder="Year of Establishment (required)"
+                       ng-model="vm.product.productName"
+                       required
+                   />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="productForm.inputProductName.$error.required">
+                   Year of Establishment is required
+                </span>
+                <span ng-show="productForm.inputProductName.$error.minlength">
+                    Validation Message.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.maxlength">
+                    Validation Message..
+                </span>
+            </span>
+        </div>
+        <div class="form-group"
+             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
+                                    productForm.inputProductCode.$dirty}">
+            <label class="col-md-2 control-label" for="inputProductCode">Farm Size</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputProductCode"
+                       name="inputProductCode"
+                       type="text"
+                       placeholder="Farm Size (required)"
+                       ng-model="vm.product.productName"
+                       required
+                   />
+            </div>
+            <span class="help-block has-error"
+                  ng-show="productForm.inputProductCode.$invalid ">
+                    Farm Size is required
+            </span>
+        </div>
+        
+        
+        
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(productForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</section>
+</section>
+  </div>
+          
+
+        </div>
