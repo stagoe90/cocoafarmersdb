@@ -1,4 +1,4 @@
-angular.module('cocoafarmersdb', ['ui.bootstrap','ui.utils','ui.router','ngAnimate']);
+angular.module('cocoafarmersdb', ['ui.bootstrap','ui.utils','ui.router','ngAnimate','esri.map']);
 
 angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvider) {
 
@@ -29,7 +29,8 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                     
                        .state("farmerEditView.farmLocation", {
                         url: "/farmLocation",
-                        templateUrl: "/farmers/farmerEditfarmLocationView.html"
+                        templateUrl: "/farmers/farmerEditfarmLocationView.html",
+                         controller: "farmerEditFarmLocationCtrl"
                     })
                     
                      .state("farmerlistView", {
