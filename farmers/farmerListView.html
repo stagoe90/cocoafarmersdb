@@ -26,16 +26,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="product in vm.products">
+            <tr ng-repeat="farmer in vm.farmers">
                 
                 <td>
-                    <a ui-sref="productDetail({productId: product.productId})">
-                    {{ product.productName}}</a>
+                    <a ui-sref="productDetail({FarmerID: farmer.FarmerID})">
+                    {{ farmer.FarmerFirstName}}</a>
                 </td>
-                <td>{{ product.productCode }}</td>
-                <td>{{ product.releaseDate | date }}</td>
-                <td>{{ product.price | currency }}</td>
-                 <td>{{ product.productCode }}</td>
+                <td>{{ farmer.FarmerLastName }}</td>
+                <td>{{ farmer.releaseDate }}</td>
+                <td>{{ farmer.price  }}</td>
+                 <td>{{ farmer.productCode }}</td>
                 <td>{{ product.releaseDate | date }}</td>
                 <td>{{ product.price | currency }}</td>
                   <td>{{ product.releaseDate | date }}</td>

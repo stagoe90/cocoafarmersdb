@@ -4,63 +4,49 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-  <link href="app.less" type="text/css" rel="stylesheet/less">
-   <link href="app.css" rel="stylesheet"/>
   
-  <link rel="stylesheet" type="text/css" href="http://js.arcgis.com/3.14/esri/css/esri.css">
-   <link href="startbootstrap-sb-admin-1.0.3 4/css/bootstrap.min.css" rel="stylesheet">
+   
+  
+  
+   
 
     <!-- Custom CSS -->
-    <link href="startbootstrap-sb-admin-1.0.3 4/css/sb-admin.css" rel="stylesheet">
+    
 
     <!-- Morris Charts CSS -->
-    <link href="startbootstrap-sb-admin-1.0.3 4/css/plugins/morris.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
-    <link href="startbootstrap-sb-admin-1.0.3 4/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
- 
     
   
-</head>
+<link rel="stylesheet" href="app.full.min.css"></head>
 <body>
 
   <!-- Livereload script for development only (stripped during dist build) -->
-  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+  
 
-<script src="bower_components/angular/angular.js"></script>
+
 
 
   <!-- JS from Bower Components -->
-  <script src="bower_components/less.js/dist/less-1.6.2.js" data-concat="false"></script>
-  <script src="bower_components/jquery/jquery.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
-  <script src="bower_components/moment/moment.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.js"></script>
-  <script src="bower_components/angular-resource/angular-resource.js"></script>
-  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
-  <script type="text/javascript" src="http://js.arcgis.com/3.14compact"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
-  <script src="bower_components/angular-esri-map/dist/angular-esri-map.js"></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   <!-- Add New Bower Component JS Above -->
 
 
   <!-- Main App JS -->
-  <script src="app.js"></script>
+  
   <!-- Add New Component JS Above -->
-       <!-- Product Controllers -->
-       <!-- Services -->
-    <script src="common/services/common.services.js"></script>
-    <script src="common/services/farmerResource.js"></script>
-
-
-    <!-- Product Controllers -->
-    <script src="/farmers/farmerListCtrl.js"></script>
-    <script src="/farmers/farmerEditFarmLocationCtrl.js"></script>
+  
     <!-- jQuery -->
   
  <div id="wrapper">
@@ -80,7 +66,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                    <li class="dropdown">
-                    <a href="#" ><i class="fa fa-user"></i> Ghana Cocoa Board</a>
+                    <a href="#"><i class="fa fa-user"></i> Ghana Cocoa Board</a>
                   <!--  <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -128,7 +114,7 @@
                                 <a ui-sref="farmerlistView" ui-sref-active="active">Farmer List</a>
                             </li>
                             <li>
-                                <a ui-sref="farmerEditView.basic" ui-sref-active="active">Add Farmer</a>
+                                <a ui-sref="farmerEditView" ui-sref-active="active">Add Farmer</a>
                             </li>
                         </ul>
                     </li>
@@ -136,13 +122,13 @@
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Setup <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="" class="collapse">
                             <li>
-                                <a ui-sref="farmerlistView"" ui-sref-active="active">Regions</a>
+                                <a ui-sref="" "="" ui-sref-active="active">Regions</a>
                             </li>
                             <li>
-                                <a ui-sref="farmerlistView" ui-sref-active="active">Districts</a>
+                                <a ui-sref="" ui-sref-active="active">Districts</a>
                             </li>
                              <li>
-                                <a ui-sref="farmerlistView" ui-sref-active="active">Farmer Types</a>
+                                <a ui-sref="" ui-sref-active="active">Farmer Types</a>
                             </li>
                         </ul>
                     </li>
@@ -161,9 +147,9 @@
       
         <!-- /#page-wrapper -->
  
-        <div ui-view></div>
+        <div ui-view=""></div>
 
     </div>
       
-</body>
+<script src="app.full.min.js"></script></body>
 </html>
