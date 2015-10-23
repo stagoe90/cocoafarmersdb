@@ -9,7 +9,8 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                     // Products
                     .state("farmerEditView", {
                         url: "/farmerEditView",
-                        templateUrl: "/farmers/farmerEditView.html"
+                        templateUrl: "/farmers/farmerEditView.html",
+                        controller: "farmerEditCtrl as vm"
                     })
                     
                        .state("farmerEditView.basic", {

@@ -9,7 +9,9 @@
                  farmerResource]);
 
     function farmerResource($resource) {
-        return $resource("http://172.16.5.11/cocoadbwebapi/api/farmer/:FarmerID");
+        return $resource("http://210-isu-01/cocoadbwebapi/api/farmer/:FarmerCount");
     }
+    
+    
 
 }());

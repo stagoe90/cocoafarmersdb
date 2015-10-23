@@ -6,23 +6,23 @@
           
  <section id="main-content">
           <section class="wrapper">
-<form class="form-horizontal" name="productForm"
+<form class="form-horizontal" name="farmerForm"
       novalidate>
     <fieldset>
         <legend>Basic Farmer Information</legend>
         <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+             ng-class="{'has-error':farmerForm.inputFarmerID.$invalid &&
+                                    farmerForm.inputFarmerID.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">Farmer Number</label>
+                   for="inputFarmerID">Farmer ID</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
+                       id="inputFarmerID"
+                       name="inputFarmerID"
                        type="text"
-                       placeholder="Farmer Number (required)"
-                       ng-model="vm.product.productName"
+                       placeholder="Farmer ID (required)"
+                       ng-model="vm.farmer.FarmerID"
                        required
                         ng-minlength="4"
                         ng-maxlength="12"/>
@@ -325,7 +325,7 @@
                     <span>
                         <button class="btn btn-primary"
                                 style="width:80px;margin-right:10px"
-                                ng-click="vm.submit(productForm.$valid)">
+                                ng-click="vm.submit(farmerForm.$valid)">
                             Save
                         </button>
                     </span>

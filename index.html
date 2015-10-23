@@ -19,7 +19,7 @@
     <!-- Custom Fonts -->
     <link href="startbootstrap-sb-admin-1.0.3 4/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
- 
+  <link href="bower_components/toastr/toastr.js" rel="stylesheet" type="text/css">
     
   
 </head>
@@ -28,7 +28,7 @@
   <!-- Livereload script for development only (stripped during dist build) -->
   <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
 
-<script src="bower_components/angular/angular.js"></script>
+
 
 
   <!-- JS from Bower Components -->
@@ -43,8 +43,8 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+  <script src="bower_components/toastr/toastr.js"></script>
   <script type="text/javascript" src="http://js.arcgis.com/3.14compact"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
   <script src="bower_components/angular-esri-map/dist/angular-esri-map.js"></script>
   <!-- Add New Bower Component JS Above -->
 
@@ -56,10 +56,11 @@
        <!-- Services -->
     <script src="common/services/common.services.js"></script>
     <script src="common/services/farmerResource.js"></script>
-
+    
 
     <!-- Product Controllers -->
     <script src="/farmers/farmerListCtrl.js"></script>
+    <script src="/farmers/farmerEditCtrl.js"></script>
     <script src="/farmers/farmerEditFarmLocationCtrl.js"></script>
     <!-- jQuery -->
   
@@ -146,7 +147,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+                                    
                    <!-- <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Blank Page</a>
                     </li>

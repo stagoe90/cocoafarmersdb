@@ -1,47 +1,60 @@
    <div id="page-wrapper">
+       
 
             <div class="container-fluid">  
+                   <form class="form-inline" id="form1">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>         
+
  <section id="main-content">
           <section class="wrapper">
-
+    
 <div class="panel panel-primary">
     <div class="panel-heading"
          style="font-size:large">Farmer List
     </div>
+    
 
     <div class="panel-body">
         <table class="table">
 
             <thead>
             <tr>
-                <td>Farmer Number</td>
-                <td>First Name</td>
+                <td>Farmer No.</td>
                 <td>Surname</td>
+                <td>Other Name(s)</td>
                 <td>Date of Birth</td>
-                 <td>Gender</td>
+                <td>Gender</td>
+                 <td>Residence</td>
+                  <td>LBC </td>
+                  <td>Passbook No. </td>
                 <td>ID Type</td>
                 <td>ID No.</td>
-                <td>Region District</td>
-                 <td>Contact</td>
+
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="farmer in vm.farmers">
+            <tr ng-repeat="farmer in vm.farmers |filter:search">
                 
                 <td>
-                    <a ui-sref="productDetail({FarmerID: farmer.FarmerID})">
-                    {{ farmer.FarmerFirstName}}</a>
+                    <a ui-sref="productDetail({FarmerCount: farmer.FarmerCount})">
+                    {{ farmer.FarmerID}}</a>
                 </td>
-                <td>{{ farmer.FarmerLastName }}</td>
-                <td>{{ farmer.releaseDate }}</td>
-                <td>{{ farmer.price  }}</td>
-                 <td>{{ farmer.productCode }}</td>
-                <td>{{ product.releaseDate | date }}</td>
-                <td>{{ product.price | currency }}</td>
-                  <td>{{ product.releaseDate | date }}</td>
-                <td>{{ product.price | currency }}</td>
+                <td>{{ farmer.FarmerSurname }}</td>
+                <td>{{ farmer.FarmerOtherNames }}</td>
+                <td>{{ farmer.FarmerDOB | date }}</td>
+                  <td>{{ farmer.FarmerGender }}</td>
+                 <td>{{ farmer.FarmerResidence }}</td>
+                  <td>{{ farmer.LBCName }}</td>
+                <td>{{ farmer.FarmerPassBookNumber }}</td>
+                 <td>{{ farmer.IDTtpeName }}</td>
+                <td>{{ farmer.FarmerIDCardNo  }}</td>
+              
                 <td>
-                    <a class="btn btn-warning"
+                    <a class="btn btn-primary"
                        ui-sref="productEdit.info({productId: product.productId})">
                         Edit
                     </a>
