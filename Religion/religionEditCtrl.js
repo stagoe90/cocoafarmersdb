@@ -10,46 +10,25 @@
 
     angular
         .module("cocoafarmersdb")
-        .controller("farmerEditCtrl",
-        ["LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","farmerResource",
-            "$state",
-            farmerEditCtrl]);
+        .controller("religionEditCtrl",
+        ["religionResource",
+            religionEditCtrl]);
 
 
-    function farmerEditCtrl(LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,farmer,farmerResource,$state) {
+    function religionEditCtrl(religionResource,religion) {
         /*jshint validthis: true */
         var vm = this;
         
-         vm.farmer = farmer;
+         vm.religion = religion;
 
-
-        LBCResource.query(function(data) {
-            vm.LBC = data;
-        });
-        
-         IDTypeResource.query(function(data) {
-            vm.IDType = data;
-        });
-        
-           educationResource.query(function(data) {
-            vm.Education = data;
-        });
-        
-          religionResource.query(function(data) {
-            vm.Religion = data;
-        });
-        
-          maritalResource.query(function(data) {
-            vm.Marital = data;
-        });
 
 
        
-        if (vm.farmer && vm.farmer.FarmerCount) {
-            vm.title = "Edit: " + vm.farmer.FarmerID;
+        if (vm.ReligionID && vm.religion.ReligionID) {
+            vm.title = "Edit: " + vm.religion.ReligionID;
         }
         else {
-            vm.title = "New Farmer";
+            vm.title = "New Religion";
         }
 
         vm.open = function ($event) {
@@ -61,7 +40,7 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
-                vm.farmer.$save(function (data) {
+                vm.religion.save(function (data) {
                     toastr.success("Save Successful");
                 });
             } else {

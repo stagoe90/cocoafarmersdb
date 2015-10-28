@@ -4,12 +4,12 @@
 
     angular
         .module("common.services")
-        .factory("farmerResource",
+        .factory("religionResource",
                 ["$resource",
-                 farmerResource]);
+                 religionResource]);
 
-    function farmerResource($resource) {
-        return $resource("http://210-isu-01/cocoadbwebapi/api/farmer/:FarmerCount",null,
+    function religionResource($resource) {
+        return $resource("http://210-isu-01/cocoadbwebapi/api/Religion/:ReligionID",null,
                 {
                     'update': { method: 'PUT' },
                       save: {

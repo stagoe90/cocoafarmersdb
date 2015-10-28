@@ -1,0 +1,52 @@
+   <div id="page-wrapper">
+       
+
+            <div class="container-fluid">  
+                  
+ <section id="main-content">
+          <section class="wrapper">
+    
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Age and Edu. of Chd. List
+    </div>
+    
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Age category</td>
+                <td>No. of Children</td>
+                <td>Edu. Level</td>
+                <td>No. of Children</td>
+      
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="farmer in vm.farmers |filter:search">
+                
+               
+                <td>{{ farmerDependantAge.FarmerDependantAgeGroup }}</td>
+                 <td>{{ farmerDependantAge.FarmerDependantAgeNoChildren }}</td>
+                <td>{{ farmerDependantAge.FarmerDependantAgeEducation }}</td>
+                  <td>{{ farmerDependantAge.FarmerDependantAgeEducationNo }}</td>
+                
+              
+                <td>
+                    <a class="btn btn-primary"
+                       ui-sref="productEdit.info({productId: product.productId})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

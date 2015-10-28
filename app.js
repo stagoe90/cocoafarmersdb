@@ -40,6 +40,24 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                         controller: "farmerListCtrl as vm"
                     })
                     
+                      .state("farmerDependantEditListView", {
+                        url: "/farmerDependantEditListView",
+                        templateUrl: "/farmers/farmerDependantEditListView.html"
+                    })
+                    
+                     .state("religionEditView", {
+                        url: "/religionEditView",
+                        templateUrl: "/Religion/religionEditView.html",
+                        controller: "religionEditCtrl as vm"
+                    })
+                    
+                      
+                     .state("LBCEditView", {
+                        url: "/LBCEditView",
+                        templateUrl: "/LBC/LBCEditView.html",
+                        controller: "LBCEditCtrl as vm"
+                    })
+                    
                       .state("farmerEditView.farmerDependantView", {
                          url: "/farmerDependantView",
                         views: {
@@ -47,8 +65,20 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                                     templateUrl: "/farmers/farmerDependantView.html"},
                                 "farmerEditDependantView@farmerEditView.farmerDependantView": {
                                     templateUrl: "/farmers/farmerEditDependantView.html" },
-                                "farmerListView@farmerEditView.farmerDependantView": {
-                                    templateUrl: "/farmers/farmerListView.html" }
+                                "farmerDependantEditListView@farmerEditView.farmerDependantView": {
+                                    templateUrl: "/farmers/farmerDependantEditListView.html" }
+                    }
+                     })
+                     
+                           .state("farmerEditView.farmerDependantAgeView", {
+                         url: "/farmerDependantAgeView",
+                        views: {
+                                "": {
+                                    templateUrl: "/farmers/farmerDependantAgeView.html"},
+                                "farmerEditDependantAgeView@farmerEditView.farmerDependantAgeView": {
+                                    templateUrl: "/farmers/farmerEditDependantAgeView.html" },
+                                "farmerDependantAgeEditListView@farmerEditView.farmerDependantAgeView": {
+                                    templateUrl: "/farmers/farmerDependantAgeEditListView.html" }
                     }
                      })
                     

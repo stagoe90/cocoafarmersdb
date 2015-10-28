@@ -28,26 +28,26 @@
                         ng-maxlength="12"/>
             </div>
             <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
-                    Farmer Number is required
+                <span ng-show="farmerForm.inputFarmerSurname.$error.required">
+                    Farmer ID is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Farm Number should be not be below 4 characters
+                <span ng-show="farmerForm.inputFarmerSurname.$error.minlength">
+                    Farmer ID should be not be below 4 characters
                 </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Farm Number should not exceed 12 charactersFarmer Number
+                <span ng-show="farmerForm.inputFarmerSurname.$error.maxlength">
+                    Farmer ID should not exceed 12 charactersFarmer Number
                 </span>
             </span>
         </div>
-        <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
-                                    productForm.inputProductCode.$dirty}">
-            <label class="col-md-2 control-label" for="inputProductCode">First Name</label>
+        <!--<div class="form-group"
+             ng-class="{'has-error':farmerForm.FarmerOtherNames.$invalid &&
+                                    farmerForm.FarmerOtherNames.$dirty}">
+            <label class="col-md-2 control-label" for="FarmerOtherNames">First Name</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductCode"
-                       name="inputProductCode"
+                       id="FarmerOtherNames"
+                       name="FarmerOtherNames"
                        placeholder="First Name (required)"
                        ng-model="vm.product.firstname"
                        required
@@ -55,270 +55,347 @@
                         ng-maxlength="12"/>
             </div>
             <span class="help-block has-error"
-                  ng-show="productForm.inputProductCode.$invalid ">
+                  ng-show="farmerForm.FarmerOtherNames.$invalid ">
                     First Name is required
             </span>
-        </div>
+        </div>-->
          <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+             ng-class="{'has-error':farmerForm.inputFarmerSurname.$invalid &&
+                                    farmerForm.inputFarmerSurname.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">Other Name(s)</label>
+                   for="inputFarmerSurname">Surname</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
+                       id="inputFarmerSurname"
+                       name="inputFarmerSurname"
                        type="text"
-                       placeholder="Other Name"
-                       ng-model="vm.product.OtherName"
+                       placeholder="Surname"
+                       ng-model="vm.farmer.Surname"
                      />
             </div>
            <!-- <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
+                <span ng-show="farmerForm.inputFarmerSurname.$error.required">
                     Other Name
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
+                <span ng-show="farmerForm.inputFarmerSurname.$error.minlength">
                     Validation Message.
                 </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
+                <span ng-show="farmerForm.inputFarmerSurname.$error.maxlength">
                     Validation Message..
                 </span>
             </span>-->
         </div>
         <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
-                                    productForm.inputProductCode.$dirty}">
-            <label class="col-md-2 control-label" for="inputProductCode">Surname</label>
+             ng-class="{'has-error':farmerForm.inputFarmerOtherNames.$invalid &&
+                                    farmerForm.inputFarmerOtherNames.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmerOtherNames">Other Name(s)</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductCode"
-                       name="inputProductCode"
-                        placeholder="Surname (required)"
-                       ng-model="vm.product.Surname"
+                       id="inputFarmerOtherNames"
+                       name="inputFarmerOtherNames"
+                        placeholder="Other Name(s) (required)"
+                       ng-model="vm.farmer.FarmerOtherNames"
                        required
                         ng-minlength="4"
                         ng-maxlength="12"/>
             </div>
             <span class="help-block has-error"
-                  ng-show="productForm.inputProductCode.$invalid ">
-                    Surname is required
+                  ng-show="farmerForm.FarmerOtherNames.$invalid ">
+                    Other Name(s) is required
             </span>
         </div>
         
         
          <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+             ng-class="{'has-error':farmerForm.inputFarmerDOB.$invalid &&
+                                    farmerForm.inputFarmerDOB.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">Date of Birth</label>
+                   for="inputFarmerDOB">Date of Birth</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
-                       type="text"
+                       id="inputFarmerDOB"
+                       name="inputFarmerDOB"
+                       type="date"
                        placeholder="dob (required)"
-                       ng-model="vm.product.dob"
+                       ng-model="vm.farmer.FarmerDOB"
                        required
                        />
             </div>
             <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
+                <span ng-show="farmerForm.FarmerDOB.$error.required">
                     Date of Birth is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Validation Message.
-                </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Validation Message..
-                </span>
+               
             </span>
         </div>
        <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+             ng-class="{'has-error':farmerForm.inputFarmerGender.$invalid &&
+                                    farmerForm.inputFarmerGender.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">Gender</label>
+                   for="inputFarmerGender">Gender</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              data-ng-model="vm.farmer.FarmerGender">
+               <option value="">-- Select --</option>
+                <option value="Male">Male</option>
+      <option value="Female">Female</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerGender.$error.required">
+                    Gender is required
+                </span>
+                
+            </span>
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerPlaceOfBirth.$invalid &&
+                                    farmerForm.inputFarmerPlaceOfBirth.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerPlaceOfBirth">Place of Birth</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
+                       id="inputFarmerPlaceOfBirth"
+                       name="inputFarmerPlaceOfBirth"
                        type="text"
-                       placeholder="Gender (required)"
-                       ng-model="vm.product.Gender"
+                       placeholder="Place of Birth"
+                       ng-model="vm.farmer.FarmerPlaceOfBirth"
+                       required
+                        />
+            </div>
+          
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerHomeTown.$invalid &&
+                                    farmerForm.inputFarmerHomeTown.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerHomeTown">Home Town</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerHomeTown"
+                       name="inputFarmerHomeTown"
+                       type="text"
+                       placeholder="Home Town"
+                       ng-model="vm.farmer.FarmerHomeTown"
+                       required
+                       />
+            </div>
+           
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerResidence.$invalid &&
+                                    farmerForm.inputFarmerResidence.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerResidence">Residence</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerResidence"
+                       name="inputFarmerResidence"
+                       type="text"
+                       placeholder="Residence"
+                       ng-model="vm.farmer.FarmerResidence"
+                       required
+                       />
+            </div>
+           
+        </div>
+          <div class="form-group" 
+             ng-class="{'has-error':farmerForm.inputLBCName.$invalid &&
+                                    farmerForm.inputLBCName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputLBCName">LBC Name</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farmer.FarmerLBCID" ng-options="LBC.LBCID as LBC.LBCName for LBC in vm.LBC">
+                <option value="">-- Select LBC --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                    LBC Name is required
+                </span>
+                
+            </span>
+        </div>
+          <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerPassBookNumber.$invalid &&
+                                    farmerForm.inputFarmerPassBookNumber.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmerPassBookNumber">PassBook No.</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerPassBookNumber"
+                       name="inputFarmerPassBookNumber"
+                        placeholder="Passbook No.(required)"
+                       ng-model="vm.farmer.FarmerPassBookNumber"
                        required
                         ng-minlength="4"
                         ng-maxlength="12"/>
             </div>
-            <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
-                    Gender is required
-                </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Farm Number should be not be below 4 characters
-                </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Farm Number should not exceed 12 charactersFarmer Number
-                </span>
+            <span class="help-block has-error"
+                  ng-show="farmerForm.FarmerPassBookNumber.$invalid ">
+                    Passbook No. is required
             </span>
         </div>
         
-         <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+        <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerIDCardType.$invalid &&
+                                    farmerForm.inputFarmerIDCardType.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">ID Type</label>
+                   for="inputLBCName">ID Card Type</label>
 
             <div class="col-md-4">
-                <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
-                       type="text"
-                       placeholder="ID Type (required)"
-                       ng-model="vm.product.IDType"
-                       required
-                       />
+             <select class="form-control" 
+                ng-model="vm.farmer.FarmerIDCardType" ng-options="person.IDTtpeName for person in vm.IDType">
+                <option value="">-- Select Card Type --</option></select>
             </div>
             <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
-                    ID Type is required
+                <span ng-show="farmerForm.FarmerIDCardType.$error.required">
+                    ID Card is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Validation Message.
-                </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Validation Message..
-                </span>
+                
             </span>
         </div>
         <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
-                                    productForm.inputProductCode.$dirty}">
-            <label class="col-md-2 control-label" for="inputProductCode">ID No.</label>
+             ng-class="{'has-error':farmerForm.inputFarmerIDCardNo.$invalid &&
+                                    farmerForm.inputFarmerIDCardNo.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmerIDCardNo">ID No.</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductCode"
-                       name="inputProductCode"
+                       id="inputFarmerIDCardNo"
+                       name="inputFarmerIDCardNo"
                       type="text"
                        placeholder="ID No. (required)"
-                       ng-model="vm.product.IDNo"
+                       ng-model="vm.farmer.FarmerIDCardNo"
                        required
                        />
             </div>
             <span class="help-block has-error"
-                  ng-show="productForm.inputProductCode.$invalid ">
+                  ng-show="farmerForm.FarmerIDCardNo.$invalid ">
                     ID No. is required
             </span>
         </div>
         
-        
-          <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+         <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerYears.$invalid &&
+                                    farmerForm.inputFarmerYears.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">Region</label>
+                   for="inputFarmerYears">No. of Yrs in Cocoa Farming</label>
 
             <div class="col-md-4">
                 <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
-                       type="text"
-                       placeholder="Region (required)"
-                       ng-model="vm.product.District"
+                       id="inputFarmerYears"
+                       name="inputFarmerYears"
+                       type="date"
+                       placeholder="dob (required)"
+                       ng-model="vm.farmer.FarmerYears"
                        required
-                        />
+                       />
             </div>
             <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
-                  Region is required  
+                <span ng-show="farmerForm.FarmerYears.$error.required">
+                   No. of Yrs in Cocoa Farming is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Validation Message.
-                </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Validation Message..
-                </span>
+               
             </span>
         </div>
-        
         
          <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+             ng-class="{'has-error':farmerForm.inputFarmerEducationalLevel.$invalid &&
+                                    farmerForm.inputFarmerEducationalLevel.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">District</label>
+                   for="inputFarmerEducationalLevel">Educational Level</label>
 
             <div class="col-md-4">
-                <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
-                       type="text"
-                       placeholder="District (required)"
-                       ng-model="vm.product.District"
-                       required
-                       />
+             <select class="form-control" 
+               ng-model="vm.farmer.FarmerEducationalLevel" ng-options="person.EducationLevel for person in vm.Education">
+                <option value="">-- Select Educational Level --</option></select>
             </div>
             <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
-                  District is required  
+                <span ng-show="farmerForm.FarmerEducationalLevel.$error.required">
+                    Educational Level is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Validation Message.
-                </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Validation Message..
-                </span>
+                
             </span>
         </div>
-       
-        
-        <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductName.$invalid &&
-                                    productForm.inputProductName.$dirty}">
+    
+    <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerReligion.$invalid &&
+                                    farmerForm.inputFarmerReligion.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputProductName">Address</label>
+                   for="inputFarmerReligion">Religion</label>
 
             <div class="col-md-4">
-                <input class="form-control"
-                       id="inputProductName"
-                       name="inputProductName"
-                       type="text"
-                       placeholder="Address (required)"
-                       ng-model="vm.product.Address"
-                       required
-                       />
+             <select class="form-control" 
+                ng-model="vm.farmer.FarmerReligion" ng-options="person.ReligionName for person in vm.Religion">
+                <option value="">-- Select Religion --</option></select>
             </div>
             <span class="help-block has-error">
-                <span ng-show="productForm.inputProductName.$error.required">
-                  Address is required  
+                <span ng-show="farmerForm.FarmerReligion.$error.required">
+                   Religion is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.minlength">
-                    Validation Message.
+                
+            </span>
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerMaritalStatus.$invalid &&
+                                    farmerForm.inputFarmerMaritalStatus.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerMaritalStatus">Marital Status</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+             ng-model="vm.farmer.FarmerMaritalStatus" ng-options="person.MaritalStatus for person in vm.Marital">
+                <option value="">-- Select Marital Status --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerMaritalStatus.$error.required">
+                   Marital Status is required
                 </span>
-                <span ng-show="productForm.inputProductName.$error.maxlength">
-                    Validation Message..
-                </span>
+                
             </span>
         </div>
         <div class="form-group"
-             ng-class="{'has-error':productForm.inputProductCode.$invalid &&
-                                    productForm.inputProductCode.$dirty}">
-            <label class="col-md-2 control-label" for="inputProductCode">Educational Level</label>
+             ng-class="{'has-error':farmerForm.inputFarmerCooperative.$invalid &&
+                                    farmerForm.inputFarmerCooperative.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmerCooperative">Coorporative/Ass.?</label>
 
             <div class="col-md-4">
-                <input class="form-control"
-                       id="inputProductCode"
-                       name="inputProductCode"
-                       ng-model="vm.product.EducationalLevel"
-                       required>
+               <select class="form-control" 
+              data-ng-model="vm.farmer.FarmerCooperative">
+               <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+      <option value="No">No</option></select>
             </div>
           
         </div>
-     
+        <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmerCooperativeName.$invalid &&
+                                    farmerForm.inputFarmerCooperativeName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerCooperativeName">Coorporative</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerCooperativeName"
+                       name="inputFarmerCooperativeName"
+                       type="text"
+                       placeholder="Coorporative"
+                       ng-model="vm.farmer.FarmerCooperativeName"
+                       required
+                       />
+            </div>
+           
+        </div>
+        
+        
 
         <div class="form-group">
             <div class="col-md-4 col-md-offset-2">
