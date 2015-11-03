@@ -9,7 +9,7 @@
                  educationResource]);
 
     function educationResource($resource) {
-        return $resource("http://210-isu-01/cocoadbwebapi/api/education/:EducationID");
+        return $resource("http://210-isu-01/cocoadb/api/education/:EducationID");
     }
     
     

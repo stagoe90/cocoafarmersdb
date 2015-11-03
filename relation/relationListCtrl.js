@@ -4,18 +4,18 @@
     "use strict";
     angular
         .module("cocoafarmersdb")
-        .controller("farmerListCtrl",
-                    ["farmer",
-                        farmerListCtrl]);
+        .controller("relationListCtrl",
+                    ["relation",
+                        relationListCtrl]);
 
-    function farmerListCtrl(farmer) {
+    function relationListCtrl(relation) {
           /*jshint validthis: true */
         var vm = this;
         
-          console.log(farmer);
+          console.log(relation);
 
         // Assign customers to scope
-        vm.farmer = farmer;
+        vm.relation = relation;
 
       //  farmerResource.query(function(data) {
         //    vm.farmers = data;

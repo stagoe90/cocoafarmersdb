@@ -37,7 +37,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="farmer in vm.farmers |filter:search">
+            <tr ng-repeat="farmer in vm.farmer |filter:search">
                 
                 <td>
                     <a ui-sref="productDetail({FarmerCount: farmer.FarmerCount})">
@@ -55,7 +55,7 @@
               
                 <td>
                     <a class="btn btn-primary"
-                       ui-sref="productEdit.info({productId: product.productId})">
+                       ui-sref="farmerEditView.basic({FarmerCount: farmer.FarmerCount})">
                         Edit
                     </a>
                 </td>

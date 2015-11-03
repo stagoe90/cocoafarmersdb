@@ -61,6 +61,9 @@
       <script src="common/services/educationResource.js"></script>
       <script src="common/services/religionResource.js"></script>
        <script src="common/services/maritalResource.js"></script>
+        <script src="common/services/relationResource.js"></script>
+         <script src="common/services/regionResource.js"></script>
+       <script src="common/services/districtResource.js"></script>
      
     
 
@@ -71,6 +74,8 @@
     <script src="/LBC/LBCListCtrl.js"></script>
      <script src="/Religion/religionEditCtrl.js"></script>
       <script src="/LBC/LBCEditCtrl.js"></script>
+       <script src="/relation/relationEditCtrl.js"></script>
+          <script src="/relation/relationListCtrl.js"></script>
     <!-- jQuery -->
   
  <div id="wrapper">
@@ -112,8 +117,14 @@
                                <li>
                                 <a ui-sref="farmerEditView.basic" ui-sref-active="active">Add Farmer</a>
                             </li>
+                              <li>
+                                <a ui-sref="relationlistView" ui-sref-active="active">Relations</a>
+                            </li>
                           
                         </ul>
+                    </li>
+                     <li>
+                        <a ui-sref="farmerlistview" ui-sref-active="active"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                      <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Setup <i class="fa fa-fw fa-caret-down"></i></a>

@@ -4,13 +4,13 @@
 
     angular
         .module("common.services")
-        .factory("religionResource",
+        .factory("regionResource",
                 ["$resource",
-                 religionResource]);
+                 regionResource]);
 
-    function religionResource($resource) {
-        return $resource("http://210-isu-01/cocoadb/api/Religion/:ReligionID",null,
-                {
+    function regionResource($resource) {
+        return $resource("http://210-isu-01/cocoadb/api/region/:RegionID", null,
+       {
                     'update': { method: 'PUT' },
                       save: {
             method: 'POST',
@@ -18,5 +18,7 @@
         }
                 });
     }
+
+
 
 }());

@@ -9,14 +9,16 @@
                  farmerResource]);
 
     function farmerResource($resource) {
-        return $resource("http://210-isu-01/cocoadbwebapi/api/farmer/:FarmerCount",null,
-                {
+        return $resource("http://210-isu-01/cocoadb/api/farmer/:FarmerCount", null,
+       {
+                
                     'update': { method: 'PUT' },
                       save: {
-            method: 'POST',
-            isArray: true
+            method: 'POST'
         }
                 });
     }
+
+
 
 }());

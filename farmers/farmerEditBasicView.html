@@ -71,7 +71,7 @@
                        name="inputFarmerSurname"
                        type="text"
                        placeholder="Surname"
-                       ng-model="vm.farmer.Surname"
+                       ng-model="vm.farmer.FarmerSurname"
                      />
             </div>
            <!-- <span class="help-block has-error">
@@ -118,7 +118,7 @@
                 <input class="form-control"
                        id="inputFarmerDOB"
                        name="inputFarmerDOB"
-                       type="date"
+                       type="text"
                        placeholder="dob (required)"
                        ng-model="vm.farmer.FarmerDOB"
                        required
@@ -147,6 +147,42 @@
             <span class="help-block has-error">
                 <span ng-show="farmerForm.FarmerGender.$error.required">
                     Gender is required
+                </span>
+                
+            </span>
+        </div>
+          <div class="form-group" 
+             ng-class="{'has-error':farmerForm.inputRegionName.$invalid &&
+                                    farmerForm.inputRegionName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputLBCName">Region</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farmer.RegionID" ng-options="Region.RegionID as Region.RegionName for Region in vm.Region">
+                <option value="">-- Select Region --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                    Region is required
+                </span>
+                
+            </span>
+        </div>
+          <div class="form-group" 
+             ng-class="{'has-error':farmerForm.inputDistrictName.$invalid &&
+                                    farmerForm.inputDistrictName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputDistrictName">District</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farmer.DistrictID" ng-options="District.DistrictID as District.DistrictName for District in vm.District">
+                <option value="">-- Select District --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                    District  is required
                 </span>
                 
             </span>
@@ -252,7 +288,7 @@
 
             <div class="col-md-4">
              <select class="form-control" 
-                ng-model="vm.farmer.FarmerIDCardType" ng-options="person.IDTtpeName for person in vm.IDType">
+                ng-model="vm.farmer.FarmerIDCardType" ng-options="IDType.IDTypeID as IDType.IDTtpeName for IDType in vm.IDType">
                 <option value="">-- Select Card Type --</option></select>
             </div>
             <span class="help-block has-error">
@@ -315,7 +351,7 @@
 
             <div class="col-md-4">
              <select class="form-control" 
-               ng-model="vm.farmer.FarmerEducationalLevel" ng-options="person.EducationLevel for person in vm.Education">
+               ng-model="vm.farmer.FarmerEducationalLevel" ng-options="Education.EducationID as Education.EducationLevel for Education in vm.Education">
                 <option value="">-- Select Educational Level --</option></select>
             </div>
             <span class="help-block has-error">
@@ -334,7 +370,7 @@
 
             <div class="col-md-4">
              <select class="form-control" 
-                ng-model="vm.farmer.FarmerReligion" ng-options="person.ReligionName for person in vm.Religion">
+                ng-model="vm.farmer.FarmerReligion"  ng-options="Religion.ReligionID as Religion.ReligionName for Religion in vm.Religion">
                 <option value="">-- Select Religion --</option></select>
             </div>
             <span class="help-block has-error">
@@ -352,7 +388,7 @@
 
             <div class="col-md-4">
              <select class="form-control" 
-             ng-model="vm.farmer.FarmerMaritalStatus" ng-options="person.MaritalStatus for person in vm.Marital">
+             ng-model="vm.farmer.FarmerMaritalStatus"  ng-options="Marital.MaritalID as Marital.MaritalStatus for Marital in vm.Marital">
                 <option value="">-- Select Marital Status --</option></select>
             </div>
             <span class="help-block has-error">

@@ -11,12 +11,12 @@
     angular
         .module("cocoafarmersdb")
         .controller("farmerEditCtrl",
-        ["LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","farmerResource",
+        ["LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","farmer",
             "$state",
             farmerEditCtrl]);
 
 
-    function farmerEditCtrl(LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,farmer,farmerResource,$state) {
+    function farmerEditCtrl(LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,farmer,$state) {
         /*jshint validthis: true */
         var vm = this;
         
@@ -42,11 +42,19 @@
           maritalResource.query(function(data) {
             vm.Marital = data;
         });
+        
+          regionResource.query(function(data) {
+            vm.Region = data;
+        });
+        
+          districtResource.query(function(data) {
+            vm.District = data;
+        });
 
 
        
         if (vm.farmer && vm.farmer.FarmerCount) {
-            vm.title = "Edit: " + vm.farmer.FarmerID;
+            vm.title = "Edit: " + vm.farmer.FarmerCount;
         }
         else {
             vm.title = "New Farmer";
@@ -61,7 +69,7 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
-                vm.farmer.$save(function (data) {
+                vm.farmer.$update(function (data) {
                     toastr.success("Save Successful");
                 });
             } else {
@@ -70,21 +78,9 @@
         };
 
         vm.cancel = function () {
-            $state.go('farmerListView');
+            $state.go('farmerlistView',{});
         };
 
-        vm.addTags = function (tags) {
-            if (tags) {
-                var array = tags.split(',');
-                vm.product.tags = vm.product.tags ? vm.product.tags.concat(array) : array;
-                vm.newTags = "";
-            } else {
-                alert("Please enter one or more tags separated by commas");
-            }
-        };
-
-        vm.removeTag = function (idx) {
-            vm.product.tags.splice(idx, 1);
-        };
+      
     }
 }());

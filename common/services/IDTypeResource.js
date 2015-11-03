@@ -9,7 +9,7 @@
                  farmerResource]);
 
     function farmerResource($resource) {
-        return $resource("http://210-isu-01/cocoadbwebapi/api/IDType/:IDTypeID");
+        return $resource("http://210-isu-01/cocoadb/api/IDType/:IDTypeID");
     }
     
     

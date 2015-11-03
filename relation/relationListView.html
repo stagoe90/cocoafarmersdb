@@ -1,0 +1,55 @@
+   <div id="page-wrapper">
+       
+
+            <div class="container-fluid">  
+                   <form class="form-inline" id="form1">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>         
+
+ <section id="main-content">
+          <section class="wrapper">
+    
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Relation List
+    </div>
+    
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Relation Name</td>
+               
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="relation in vm.relation |filter:search">
+                
+                <td>
+                    <a ui-sref="relationDetail({RelationID: relation.RelationID})">
+                    {{ relation.RelationID}}</a>
+                </td>
+                <td>{{ relation.RelsationName }}</td>
+  
+              
+                <td>
+                    <a class="btn btn-primary"
+                       ui-sref="relationEditView({id: relation.RelationID})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

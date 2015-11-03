@@ -8,9 +8,18 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                     })
                     // Products
                     .state("farmerEditView", {
-                        url: "/farmerEditView",
+                        url: "/farmerEditView/:FarmerCount",
                         templateUrl: "/farmers/farmerEditView.html",
-                        controller: "farmerEditCtrl as vm"
+                        controller: "farmerEditCtrl as vm",
+                        
+                          resolve: {
+                           farmerResource: "farmerResource",
+
+                            farmer: function (farmerResource, $stateParams) {
+                                var FarmerCount = $stateParams.FarmerCount;
+                                return farmerResource.get({ FarmerCount: FarmerCount }).$promise;
+                            }
+                        }
                     })
                     
                        .state("farmerEditView.basic", {
@@ -37,7 +46,27 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                      .state("farmerlistView", {
                         url: "/farmerListView",
                         templateUrl: "/farmers/farmerListView.html",
-                        controller: "farmerListCtrl as vm"
+                        controller: "farmerListCtrl as vm",
+                          resolve: {
+                farmerResource: 'farmerResource',
+                farmer: function(farmerResource){
+
+                    // This line is updated to return the promise
+                    return farmerResource.query().$promise;
+                }}
+                    })
+                    
+                          .state("relationlistView", {
+                        url: "/relationListView/:id",
+                        templateUrl: "/relation/relationListView.html",
+                        controller: "relationListCtrl as vm",
+                          resolve: {
+                relationResource: 'relationResource',
+                relation: function(relationResource){
+
+                    // This line is updated to return the promise
+                    return relationResource.query().$promise;
+                }}
                     })
                     
                       .state("farmerDependantEditListView", {
@@ -48,7 +77,8 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                      .state("religionEditView", {
                         url: "/religionEditView",
                         templateUrl: "/Religion/religionEditView.html",
-                        controller: "religionEditCtrl as vm"
+                        controller: "religionEditCtrl as vm",
+                        
                     })
                     
                       
@@ -57,6 +87,21 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                         templateUrl: "/LBC/LBCEditView.html",
                         controller: "LBCEditCtrl as vm"
                     })
+                    
+                       .state("relationEditView", {
+                        url: "/relationEditView",
+                        templateUrl: "/relation/relationEditView.html",
+                        controller: "relationEditCtrl as vm",
+                    resolve: {
+                            relationResource: "relationResource",
+
+                            relation: function (relationResource, $stateParams) {
+                                var relationID = $stateParams.id;
+                                return relationResource.get({ relationID: relationID }).$promise;
+                            }
+                        }
+                    })
+                    
                     
                       .state("farmerEditView.farmerDependantView", {
                          url: "/farmerDependantView",
