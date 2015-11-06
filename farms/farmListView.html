@@ -1,0 +1,70 @@
+   <div id="page-wrapper">
+       
+
+            <div class="container-fluid">  
+                   <form class="form-inline" id="form1">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>         
+
+ <section id="main-content">
+          <section class="wrapper">
+    
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Farm List
+    </div>
+    
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Farm ID.</td>
+                <td>Region</td>
+                <td>District</td>
+                <td>Village</td>
+                <td>Year Estb.</td>
+                 <td>Farm Size</td>
+                  <td>Area Under Cult. </td>
+                  <td>No. of Cocoa Trees </td>
+                <td>No. of Shade</td>
+              
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="farm in vm.farm |filter:search">
+                
+                <td>
+                    <a ui-sref="farmerDetailView({FarmerCount: farm.FarmerCount})">
+                    {{ farm.FarmID}}</a>
+                </td>
+                <td>{{ farm.RegionName }}</td>
+                <td>{{ farm.DistrictName }}</td>
+                <td>{{ farm.FarmVillage }}</td>
+                  <td>{{ farm.FarmYear | date }}</td>
+                 <td>{{ farm.FarmSize }}</td>
+                  <td>{{ farm.AreaUnderCultivation }}</td>
+                <td>{{ farm.FarmNumberOfCocoaTress }}</td>
+                 <td>{{ farm.FarmNumberOfShadeTrees }}</td>
+               
+              
+                <td>
+                    <a class="btn btn-primary"
+                       ui-sref="farmerEditView.farmDetails({FarmCount: farm.FarmCount})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

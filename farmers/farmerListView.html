@@ -40,7 +40,7 @@
             <tr ng-repeat="farmer in vm.farmer |filter:search">
                 
                 <td>
-                    <a ui-sref="productDetail({FarmerCount: farmer.FarmerCount})">
+                    <a ui-sref="farmerDetailView({FarmerCount: farmer.FarmerCount})">
                     {{ farmer.FarmerID}}</a>
                 </td>
                 <td>{{ farmer.FarmerSurname }}</td>
