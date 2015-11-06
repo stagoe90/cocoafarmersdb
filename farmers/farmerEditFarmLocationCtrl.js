@@ -4,10 +4,10 @@ angular.module('cocoafarmersdb')
     .controller('farmerEditFarmLocationCtrl', function($scope) {
         $scope.map = {
                         center: {
-                             lng: -2.3321273,
-                             lat: 6.4569353
+                             lng: 1.023194,
+                             lat: 7.946527
                         },
-                        zoom: 12
+                        zoom: 7
         };
     });
     }());
