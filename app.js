@@ -22,6 +22,18 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                         }
                     })
                     
+                    .state("farmerCreateView", {
+                        url: "/farmerCreateView",
+                        templateUrl: "/farmers/farmerCreateView.html",
+                        controller: "farmerCreateCtrl as vm"
+                    })
+                    
+                    
+                        .state("farmerCreateView.basic", {
+                        url: "/basic",
+                        templateUrl: "/farmers/farmerCreateBasicView.html"
+                    })
+                    
                   
                     
                        .state("farmerEditView.basic", {

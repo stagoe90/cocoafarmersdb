@@ -14,7 +14,7 @@
                  relationResource]);
 
     function relationResource($resource) {
-        return $resource("http://210-isu-01/cocoadb/api/relation/:id",null,
+        return $resource("http://172.16.5.11/cocoadb/api/relation/:id",null,
        {
                
                     'update': { method: 'PUT' },
