@@ -11,11 +11,11 @@
     angular
         .module("cocoafarmersdb")
         .controller("farmerCreateCtrl",
-        ["farmerResource","LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","$state",
+        ["farmerResource","LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","typeOfArrangementResource","$state",
             farmerCreateCtrl]);
 
 
-    function farmerCreateCtrl(farmerResource,LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,$state) {
+    function farmerCreateCtrl(farmerResource,LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,typeOfArrangementResource,$state) {
         /*jshint validthis: true */
         /*jshint newcap: false */
         
@@ -52,7 +52,12 @@
             vm.District = data;
         });
         
-   
+       typeOfArrangementResource.query(function(data) {
+            vm.TypeOfArrangement = data;
+        });
+        
+        
+        
 
       
 

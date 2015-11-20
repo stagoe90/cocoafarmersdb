@@ -2,13 +2,13 @@
        
 
             <div class="container-fluid">  
-                   <form class="form-inline" id="form1">
-        <div class="form-group">
-            <label >Search</label>
-            <input type="text" ng-model="search" class="form-control" placeholder="Search">
-        </div>
+             
+  <form class="form-inline" id="form1">
+        
+           <!-- <label >Search</label>-->
+            <input type="text" ng-model="vm.id" ng-hide="true" class="form-control"  placeholder="Search">
+       
     </form>         
-
  <section id="main-content">
           <section class="wrapper">
     
@@ -37,7 +37,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="farm in vm.farm |filter:{ farm.FarmerCount: search }"">
+            <tr ng-repeat="farm in vm.farm |filter:vm.id">
                 
                 <td>
                     <a ui-sref="farmerDetailView({FarmerCount: farm.FarmerCount})">

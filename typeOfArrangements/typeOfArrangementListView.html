@@ -1,0 +1,55 @@
+   <div id="page-wrapper">
+       
+
+            <div class="container-fluid">  
+                   <form class="form-inline" id="form1">
+        <div class="form-group">
+            <label >Search</label>
+            <input type="text" ng-model="search" class="form-control" placeholder="Search">
+        </div>
+    </form>         
+
+ <section id="main-content">
+          <section class="wrapper">
+    
+<div class="panel panel-primary">
+    <div class="panel-heading"
+         style="font-size:large">Type of Arrangements
+    </div>
+    
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Type of Arrangement</td>
+               
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="typeofarrangement in vm.typeofarrangement |filter:search">
+                
+                <td>
+                    <a ui-sref="typeofarrangementDetail({RelationID: relation.RelationID})">
+                    {{ typeofarrangement.FarmypeOfarrangement}}</a>
+                </td>
+                <td>{{ typeofarrangement.TypeOFArrangementName }}</td>
+  
+              
+                <td>
+                    <a class="btn btn-primary"
+                       ui-sref="relationEditView({id: relation.RelationID})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

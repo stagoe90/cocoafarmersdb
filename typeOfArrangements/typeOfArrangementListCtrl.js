@@ -4,20 +4,18 @@
     "use strict";
     angular
         .module("cocoafarmersdb")
-        .controller("farmListCtrl",
-                    ["farm","$stateParams",
-                        farmListCtrl]);
+        .controller("typeOfArrangementListCtrl",
+                    ["typeofarrangement",
+                        typeOfArrangementListCtrl]);
 
-    function farmListCtrl(farm,$stateParams) {
+    function typeOfArrangementListCtrl(typeofarrangement) {
           /*jshint validthis: true */
         var vm = this;
         
-        vm.id=$stateParams.FarmerCount;
-        
-          console.log(farm);
+          console.log(typeofarrangement);
 
         // Assign customers to scope
-        vm.farm = farm;
+        vm.typeofarrangement = typeofarrangement;
 
       //  farmerResource.query(function(data) {
         //    vm.farmers = data;

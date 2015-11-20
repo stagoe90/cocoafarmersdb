@@ -13,17 +13,17 @@
     angular
         .module("cocoafarmersdb")
         .controller("farmerDetailCtrl",
-                     ["farmerResource","LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","farmer",
+                     ["farmerResource","farmResource","LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","farmer",
             "$state",
                      farmerDetailCtrl]);
                      
- function farmerDetailCtrl(farmerResource,LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,farmer,$state) {
+ function farmerDetailCtrl(farmerResource,farmResource,LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,farmer,$state) {
        /*jshint validthis: true */
         var vm = this;
 
         vm.farmer = farmer;
 
-        vm.title = "Farmer Detail: " + vm.farmer.FarmerID;
+        vm.title = "Farm Detail: " + vm.farmer.FarmerID;
                
        farmerResource.query(function(data) {
             vm.Farmer = data;

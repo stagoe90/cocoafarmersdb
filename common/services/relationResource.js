@@ -14,16 +14,15 @@
                  relationResource]);
 
     function relationResource($resource) {
-        return $resource("http://172.16.5.11/cocoadb/api/relation/:id",null,
-       {
-               
-                    'update': { method: 'PUT' },
-                    'get':    {method:'GET'},
-                      save: { method: 'POST'
-        }
+        return $resource("http://172.16.5.11/cocoadb/api/Relation/:RelationID",null,
+        {
+                
+                    'update': { method: 'PUT' }
                 });
     }
 
 
 
 }());
+
+

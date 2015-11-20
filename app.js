@@ -3,9 +3,18 @@ angular.module('cocoafarmersdb', ['common.services','ui.bootstrap','ui.utils','u
 angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvider) {
 
  $stateProvider.state("home", {
-                        url: "/home",
-                        templateurl: "/farmers/farmerListView.html"
+                         url: "/farmerListView",
+                        templateUrl: "/farmers/farmerListView.html",
+                        controller: "farmerListCtrl as vm",
+                          resolve: {
+                farmerResource: 'farmerResource',
+                farmer: function(farmerResource){
+
+                    // This line is updated to return the promise
+                    return farmerResource.query().$promise;
+                }}
                     })
+                    
                     // Products
                     .state("farmerEditView", {
                         url: "/farmerEditView/:FarmerCount",
@@ -34,6 +43,12 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                         templateUrl: "/farmers/farmerCreateBasicView.html"
                     })
                     
+                    
+                      .state("farmerCreateView.farmDetails", {
+                        url: "/farmDetails",
+                        templateUrl: "/farms/farmCreateFarmView.html",
+                          controller: "farmCreateFarmCtrl as vm"
+                    })
                   
                     
                        .state("farmerEditView.basic", {
@@ -57,6 +72,13 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                          controller: "farmerEditFarmLocationCtrl"
                     })
                     
+                           .state("farmerDetailBasicView", {
+                        url: "/farmerDetailBasicView/:FarmerCount",
+                        templateUrl: "/farmers/farmerDetailBasicView.html",
+                   controller: function($scope, $stateParams) {
+     $scope.FarmerCount = $stateParams.FarmerCount;
+  }
+})
                      .state("farmerlistView", {
                         url: "/farmerListView",
                         templateUrl: "/farmers/farmerListView.html",
@@ -70,8 +92,33 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                 }}
                     })
                     
+                    
+                       .state("farmListView", {
+                        url: "/farmListView",
+                        templateUrl: "/farms/farmListView.html",
+                        controller: "farmListCtrl as vm",
+                          resolve: {
+                farmResource: 'farmResource',
+                farm: function(farmResource){
+                  // This line is updated to return the promise
+                    return farmResource.query().$promise;
+                }}
+                    })
+                    
+                     .state("typeOfArrangementListView", {
+                        url: "/typeOfArrangementListView",
+                        templateUrl: "/typeOfArrangements/typeOfArrangementListView.html",
+                        controller: "typeOfArrangementListCtrl as vm",
+                          resolve: {
+                typeOfArrangementResource: 'typeOfArrangementResource',
+                typeofarrangement: function(typeOfArrangementResource){
+                  // This line is updated to return the promise
+                    return typeOfArrangementResource.query().$promise;
+                }}
+                    })
+                    
                           .state("relationlistView", {
-                        url: "/relationListView/:id",
+                        url: "/relationListView/:Relation",
                         templateUrl: "/relation/relationListView.html",
                         controller: "relationListCtrl as vm",
                           resolve: {
@@ -124,8 +171,25 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                                     templateUrl: "/farmers/farmerDependantView.html"},
                                 "farmerEditDependantView@farmerEditView.farmerDependantView": {
                                     templateUrl: "/farmers/farmerEditDependantView.html" },
+                                      controller: "relationEditCtrl as vm",
                                 "farmerDependantEditListView@farmerEditView.farmerDependantView": {
-                                    templateUrl: "/farmers/farmerDependantEditListView.html" }
+                                    templateUrl: "/farmers/farmerDependantEditListView.html",
+                                    controller: "relationEditCtrl as vm"}
+                    }
+                     })
+                     
+                     
+                       .state("farmerCreateView.dependantView", {
+                         url: "/dependantView",
+                        views: {
+                                "": {
+                                    templateUrl: "/dependants/dependantView.html"},
+                                "dependantCreateView@farmerCreateView.dependantView": {
+                                    templateUrl: "/dependants/dependantCreateView.html" },
+                                      controller: "dependantCreateCtrl as vm",
+                                "dependantListView@farmerCreateView.dependantView": {
+                                    templateUrl: "/dependants/dependantListView.html"
+                                  }
                     }
                      })
                      
@@ -137,18 +201,26 @@ angular.module('cocoafarmersdb').config(function($stateProvider, $urlRouterProvi
                                 "": {
                                     templateUrl: "/farmers/farmerDetailView.html"},
                                 "farmerDetailBasicView@farmerDetailView": {
-                                    templateUrl: "/farmers/farmerDetailBasicView.html" },
-                                    controller: "farmerDetailCtrl as vm",
-                                         resolve: {
+                                    templateUrl: "/farmers/farmerDetailBasicView.html" ,
+                                     controller: "farmerDetailCtrl as vm",
+                        
+                          resolve: {
                            farmerResource: "farmerResource",
 
                             farmer: function (farmerResource, $stateParams) {
                                 var FarmerCount = $stateParams.FarmerCount;
                                 return farmerResource.get({ FarmerCount: FarmerCount }).$promise;
-                            }
-                        },
-                                "farmListView@farmerDetailView": {
-                                    templateUrl: "/farms/farmListView.html" },    
+                            }}},
+                                "farmDetailListView@farmerDetailView": {
+                                    templateUrl: "/farms/farmDetailListView.html" ,
+                                      controller: "farmListCtrl as vm",
+                        resolve: {
+                           farmResource: "farmResource",
+
+                            farm: function (farmResource, $stateParams) {
+                                var FarmerCount = $stateParams.FarmerCount;
+                                return farmResource.query({ FarmerCount: FarmerCount }).$promise;
+                            }}}
                     }
                      })
                      

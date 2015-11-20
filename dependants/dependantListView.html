@@ -1,0 +1,52 @@
+   <div id="page-wrapper">
+       
+
+            <div class="container-fluid">  
+                  
+ <section id="main-content">
+          <section class="wrapper">
+    
+<div class="panel panel-green">
+    <div class="panel-heading"
+         style="font-size:large">Dependant List
+    </div>
+    
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>DOB</td>
+                <td>Relation</td>
+                <td>Edu. Level</td>
+      
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="farmer in vm.farmers |filter:search">
+                
+               
+                <td>{{ dependent.DependantName }}</td>
+                 <td>{{ dependent.DependantDOB | date }}</td>
+                <td>{{ dependent.DependantRelation }}</td>
+                  <td>{{ dependent.EducationID }}</td>
+                
+              
+                <td>
+                    <a class="btn btn-warning"
+                       ui-sref="productEdit.info({productId: product.productId})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

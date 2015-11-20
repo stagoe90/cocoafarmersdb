@@ -123,7 +123,7 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #422d1d ;
+        background-color: #663300 ;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -211,19 +211,78 @@ ul.alert-dropdown {
 }
 
 .panel-yellow {
-    border-color: #D37706;
+    border-color: #ffcd00;
 }
 
 .panel-yellow > .panel-heading {
-    border-color: #D37706;
+    border-color: #ffcd00;
     color: #fff;
-    background-color: #D37706;
+    background-color: #ffcd00;
 }
 
 .panel-yellow > a {
-    color: #D37706;
+    color: #ffcd00;
 }
 
 .panel-yellow > a:hover {
-    color: #D37706;
+    color: #ffcd00;
+}
+
+
+.btn {
+    padding: 8px 18px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-yellow {
+    background: #ffcd00;
+    color: #ffffff;
+}
+ 
+.btn-yellow:hover, .btn-yellow:focus, .btn-yellow:active, .btn-yellow.active, .open > .dropdown-toggle.btn-yellow {
+    background: #ffcd00;
+}
+ 
+.btn-yellow:active, .btn-yellow.active {
+    background: #ffcd00;
+    box-shadow: none;
+}
+
+.panel-purple {
+    border-color: #ff6600;
+}
+
+.panel-purple > .panel-heading {
+    border-color: #ff6600;
+    color: #fff;
+    background-color: #ff6600;
+}
+
+.panel-purple > a {
+    color: #ff6600;
+}
+
+.panel-purple > a:hover {
+    color: #ff6600;
+}
+
+.btn-purple {
+    background: #ff6600;
+    color: #ff6600;
+}
+ 
+.btn-purple:hover, .btn-purple:focus, .btn-purple:active, .btn-purple.active, .open > .dropdown-toggle.btn-purple {
+    background: #ff6600;
+}
+ 
+.btn-purple:active, .btn-purple.active {
+    background: #ff6600;
+    box-shadow: none;
 }

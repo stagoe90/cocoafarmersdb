@@ -1,0 +1,439 @@
+  <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+               
+          
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="farmForm"
+      novalidate>
+    <fieldset>
+        <legend>Farm Information</legend>
+        <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmID.$invalid &&
+                                    farmForm.inputFarmID.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmID">Farm ID</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmID"
+                       name="inputFarmID"
+                       type="text"
+                       placeholder="Farm ID (required)"
+                       ng-model="vm.farm.FarmID"
+                       required
+                        ng-minlength="4"
+                        ng-maxlength="12"/>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.inputFarmerSurname.$error.required">
+                    Farm ID is required
+                </span>
+                <span ng-show="farmForm.inputFarmerSurname.$error.minlength">
+                    Farm ID should be not be below 4 characters
+                </span>
+                <span ng-show="farmForm.inputFarmerSurname.$error.maxlength">
+                    Farm ID should not exceed 12 charactersFarmer Number
+                </span>
+            </span>
+        </div>
+        <div class="form-group" 
+             ng-class="{'has-error':farmerForm.inputRegionName.$invalid &&
+                                    farmerForm.inputRegionName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputLBCName">Region</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farmer.RegionID" ng-options="Region.RegionID as Region.RegionName for Region in vm.Region">
+                <option value="">-- Select Region --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                    Region is required
+                </span>
+                
+            </span>
+        </div>
+          <div class="form-group" 
+             ng-class="{'has-error':farmerForm.inputDistrictName.$invalid &&
+                                    farmerForm.inputDistrictName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputDistrictName">District</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farmer.DistrictID" ng-options="District.DistrictID as District.DistrictName for District in vm.District">
+                <option value="">-- Select District --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                    District  is required
+                </span>
+                
+            </span>
+        </div>
+       
+         <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmVillage.$invalid &&
+                                    farmForm.inputFarmVillage.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmVillage">Village</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmVillage"
+                       name="inputFarmVillage"
+                       type="text"
+                       placeholder="Village"
+                       ng-model="vm.farm.FarmVillage"
+                     />
+            </div>
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmYear.$invalid &&
+                                    farmForm.inputFarmYear.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmYear">Farm Year</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmYear"
+                       name="inputFarmYear"
+                       type="date"
+                       placeholder="dob (required)"
+                       ng-model="vm.farm.FarmYear"
+                       required
+                       />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarmYear.$error.required">
+                   Farm Year is required
+                </span>
+               
+            </span>
+        </div>
+        
+        <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmSize.$invalid &&
+                                    farmForm.inputFarmSize.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmSize">Farm Size</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmSize"
+                       name="inputFarmSize"
+                        placeholder="Farm Size (required)"
+                       ng-model="vm.farm.FarmSize"
+                       required
+                        ng-minlength="4"
+                        ng-maxlength="12"/>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="farmForm.FarmSize.$invalid ">
+                   Farm Size is required
+            </span>
+        </div>
+          <div class="form-group"
+             ng-class="{'has-error':farmForm.inputAreaUnderCultivation.$invalid &&
+                                    farmForm.inputAreaUnderCultivation.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputAreaUnderCultivation">Area Under Cultivation</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputAreaUnderCultivation"
+                       name="inputAreaUnderCultivation"
+                       type="text"
+                       placeholder="Area Under Cultivation"
+                       ng-model="vm.farm.AreaUnderCultivation"
+                       required
+                        />
+            </div>
+          
+        </div>
+           <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmNumberOfCocoaTress.$invalid &&
+                                    farmForm.inputFarmNumberOfCocoaTress.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmNumberOfCocoaTress">Number Of Cocoa Tress</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmNumberOfCocoaTress"
+                       name="inputFarmNumberOfCocoaTress"
+                       type="text"
+                       placeholder="Number Of Cocoa Tress"
+                       ng-model="vm.farm.FarmNumberOfCocoaTress"
+                       required
+                       />
+            </div>
+           
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmNumberOfShadeTrees.$invalid &&
+                                    farmForm.inputFarmNumberOfShadeTrees.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmNumberOfShadeTrees">Number Of Shade Trees</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmNumberOfShadeTrees"
+                       name="inputFarmNumberOfShadeTrees"
+                       type="text"
+                       placeholder="Number Of Shade Trees"
+                       ng-model="vm.farm.FarmNumberOfShadeTrees"
+                       required
+                       />
+            </div>
+           
+      
+        </div>
+      
+      
+          <div class="form-group" 
+             ng-class="{'has-error':farmForm.inputOwnerShip.$invalid &&
+                                    farmForm.inputOwnerShip.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputOwnershipName">Source Of OwnerShip</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farm.FarmSourceOfOwnerShip" ng-options="Ownership.OwnershipID as Ownership.OwnershipName for Ownership in vm.Ownership">
+                <option value="">-- Select Source Of OwnerShip --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarmOwnerShip.$error.required">
+                    Source Of OwnerShip is required
+                </span>
+                
+            </span>
+        </div>
+          <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmAgeOfCocoaTrees.$invalid &&
+                                    farmForm.inputFarmAgeOfCocoaTrees.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmAgeOfCocoaTrees">Age Of Cocoa Trees</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmAgeOfCocoaTrees"
+                       name="inputFarmAgeOfCocoaTrees"
+                       type="date"
+                       placeholder="Age Of Cocoa Trees (required)"
+                       ng-model="vm.farm.FarmAgeOfCocoaTrees"
+                       required
+                       />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarFarmAgeOfCocoaTreesmYear.$error.required">
+                   Farm Age Of Cocoa Trees is required
+                </span>
+               
+            </span>
+        </div>
+        
+         <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmCocoaTreeType.$invalid &&
+                                    farmForm.inputFarmCocoaTreeType.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmCocoaTreeType">Cocoa Tree Type</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              
+                 ng-model="vm.farm.FarmCocoaTreeType" ng-options="CocoaType.CocoaTypeID as CocoaType.CocoaTypeName for CocoaType in vm.CocoaType">
+                <option value="">-- Cocoa Tree Type --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarmCocoaTreeType.$error.required">
+                    Cocoa Tree Type is required
+                </span>
+                
+            </span>
+        </div>
+    
+    <div class="form-group"
+             ng-class="{'has-error':farmForm.inputSourceOfMaterials.$invalid &&
+                                    farmForm.inputSourceOfMaterials.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputSourceOfMaterials">Source Of Materials</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+    
+                 ng-model="vm.farm.SourceOfMaterials" ng-options="SourceOfMaterial.SourceOfMaterialID as SourceOfMaterial.SourceOfMaterialName for SourceOfMaterial in vm.SourceOfMaterial">
+                <option value="">-- Select Source Of Materials --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.SourceOfMaterials.$error.required">
+                   Source Of Materials is required
+                </span>
+                
+            </span>
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmSourceOfLabour.$invalid &&
+                                    farmerForm.inpuFarmSourceOfLabour.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmSourceOfLabour">Source Of Labour</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+            
+                ng-model="vm.farm.FarmSourceOfLabour" ng-options="SourceOfLabour.SourceOfLabourID as SourceOfLabour.SourceOfLabourName for SourceOfLabour in vm.SourceOfLabour">
+                <option value="">-- Select Source Of Labour --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarmSourceOfLabour.$error.required">
+                 Source Of Labour is required
+                </span>
+                
+            </span>
+        </div>
+        
+          <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmCaretakers.$invalid &&
+                                    farmForm.inputFarmCaretakers.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmCaretakers">No Caretakers</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmCaretakers"
+                       name="inputFarmCaretakers"
+                        placeholder="Caretakers(required)"
+                       ng-model="vm.farm.FarmCaretakers"
+                       required
+                        ng-minlength="4"
+                        ng-maxlength="12"/>
+            </div>
+            <span class="help-block has-error"
+                  ng-show="farmForm.FarmCaretakers.$invalid ">
+                   Caretakers is required
+            </span>
+        </div>
+        
+        <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmypeOfarrangement.$invalid &&
+                                    farmForm.inputFarmypeOfarrangement.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmypeOfarrangement">Type Of Arrangement</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+                    ng-model="vm.farm.FarmypeOfarrangement" ng-options="TypeOfArrangement.FarmypeOfarrangement as TypeOfArrangement.TypeOFArrangementName for TypeOfArrangement in vm.TypeOfArrangement">
+                <option value="">-- Select Type of Arrangement --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarmypeOfarrangement.$error.required">
+                  Type Of Arrangement is required
+                </span>
+                
+            </span>
+        </div>
+        
+          <!--  <div class="form-group" 
+             ng-class="{'has-error':farmerForm.inputRegionName.$invalid &&
+                                    farmerForm.inputRegionName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputLBCName">Region</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+              ng-model="vm.farmer.RegionID" ng-options="Region.RegionID as Region.RegionName for Region in vm.Region">
+                <option value="">-- Select Region --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                    Region is required
+                </span>
+                
+            </span>
+        </div>
+        
+          <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmExtension.$invalid &&
+                                    farmForm.inputFarmExtension.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmExtension">Extension</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+                ng-model="vm.farm.FarmExtension" ng-options="person.IDTtpeName for person in vm.FarmExtension">
+                <option value="">-- Select Extension --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmForm.FarmExtension.$error.required">
+                    Extension is required
+                </span>
+                
+            </span>
+        </div>-->
+       <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmAgricActivity.$invalid &&
+                                    farmerForm.inputFarmAgricActivity.$dirty}">
+            <label class="col-md-2 control-label" for="inputFarmAgricActivity">Agric Activity?</label>
+
+            <div class="col-md-4">
+               <select class="form-control" 
+              data-ng-model="vm.farmer.FarmAgricActivity">
+               <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+      <option value="No">No</option></select>
+            </div>
+          
+        </div>
+        
+    
+        
+       
+        <div class="form-group"
+             ng-class="{'has-error':farmerForm.inputFarmAgricActivityComment.$invalid &&
+                                    farmerForm.inputFarmAgricActivityComment.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerFarmAgricActivityComment">Agric Activity Comments</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmAgricActivityComment"
+                       name="inputFarmAgricActivityComment"
+                       type="textarea"
+                       placeholder="Agric Activity Comments"
+                       ng-model="vm.farm.FarmAgricActivityComment"
+                       required
+                       />
+            </div>
+           
+        </div>
+        
+        
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-warning"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(farmerForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+        </div>
