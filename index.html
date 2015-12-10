@@ -71,6 +71,8 @@
         <script src="common/services/sourceOfMaterialResource.js"></script>
      <script src="common/services/sourceOfLabourResource.js"></script>
      <script src="common/services/dependantResource.js"></script>
+       <script src="common/services/farmerDependantAgeResource.js"></script>
+        <script src="common/services/dependantAgeResource.js"></script>
      
     
 
@@ -78,11 +80,56 @@
     <script src="/farmers/farmerListCtrl.js"></script>
     <script src="/farmers/farmerEditCtrl.js"></script>
     <script src="/farmers/farmerEditFarmLocationCtrl.js"></script>
+     <script src="/LBC/LBCCreateCtrl.js"></script>
     <script src="/LBC/LBCListCtrl.js"></script>
      <script src="/Religion/religionEditCtrl.js"></script>
-      <script src="/LBC/LBCEditCtrl.js"></script>
+     <script src="/Religion/religionCreateCtrl.js"></script>
+     <script src="/Religion/religionListCtrl.js"></script>
+       <script src="/Regions/regionEditCtrl.js"></script>
+     <script src="/Regions/regionCreateCtrl.js"></script>
+     <script src="/Regions/regionListCtrl.js"></script>
+     
+      <script src="/idTypes/idTypeEditCtrl.js"></script>
+     <script src="/idTypes/idTypeCreateCtrl.js"></script>
+     <script src="/idTypes/idTypeListCtrl.js"></script>
+     
+       <script src="/education/educationEditCtrl.js"></script>
+     <script src="/education/educationCreateCtrl.js"></script>
+     <script src="/education/educationListCtrl.js"></script>
+     
+       <script src="/marital/maritalEditCtrl.js"></script>
+     <script src="/marital/maritalCreateCtrl.js"></script>
+     <script src="/marital/maritalListCtrl.js"></script>
+     
+       <script src="/ownership/ownershipEditCtrl.js"></script>
+     <script src="/ownership/ownershipCreateCtrl.js"></script>
+     <script src="/ownership/ownershipListCtrl.js"></script>
+     
+       <script src="/cocoaType/cocoaTypeEditCtrl.js"></script>
+     <script src="/cocoaType/cocoaTypeCreateCtrl.js"></script>
+     <script src="/cocoaType/cocoaTypeListCtrl.js"></script>
+     
+       <script src="/sourceOfLabour/sourceOfLabourEditCtrl.js"></script>
+     <script src="/sourceOfLabour/sourceOfLabourCreateCtrl.js"></script>
+     <script src="/sourceOfLabour/sourceOfLabourListCtrl.js"></script>
+     
+       <script src="/sourceOfMaterial/sourceOfMaterialEditCtrl.js"></script>
+     <script src="/sourceOfMaterial/sourceOfMaterialCreateCtrl.js"></script>
+     <script src="/sourceOfMaterial/sourceOfMaterialListCtrl.js"></script>
+     
        <script src="/relation/relationEditCtrl.js"></script>
-          <script src="/relation/relationListCtrl.js"></script>
+     <script src="/relation/relationCreateCtrl.js"></script>
+     <script src="/relation/relationListCtrl.js"></script>
+     
+        <script src="/typeOfArrangements/typeOfArrangementEditCtrl.js"></script>
+     <script src="/typeOfArrangements/typeOfArrangementCreateCtrl.js"></script>
+     <script src="/typeOfArrangements/typeOfArrangementListCtrl.js"></script>
+     
+      <script src="/districts/districtEditCtrl.js"></script>
+     <script src="/districts/districtCreateCtrl.js"></script>
+     <script src="/districts/districtListCtrl.js"></script>
+      <script src="/LBC/LBCEditCtrl.js"></script>
+      
            <script src="/farmers/farmerDetailCtrl.js"></script>
             <script src="/farmers/farmerCreateCtrl.js"></script>
              <script src="/farms/farmListCtrl.js"></script>
@@ -91,7 +138,11 @@
                  <script src="/typeOfArrangements/typeOfArrangementListCtrl.js"></script>
                     <script src="/dependants/dependantCreateCtrl.js"></script>
                       <script src="/dependants/dependantListCtrl.js"></script>
-                 
+                      <script src="/farmerDependantAges/farmerDependantAgeCreateCtrl.js"></script>
+                         <script src="/farmerDependantAges/farmerDependantAgeListCtrl.js"></script>
+                          <script src="/farms/farmEditFarmCtrl.js"></script>   
+                           <script src="/dependants/dependantEditCtrl.js"></script> 
+                <script src="/farmerDependantAges/farmerDependantAgeEditCtrl.js"></script>
     <!-- jQuery -->
   
  <div id="wrapper">
@@ -113,7 +164,7 @@
             <ul class="nav navbar-right top-nav">
                    <li class="dropdown">
                       
-                    <a href="#" > COCOA FARMERS DATABASE </a>
+                    <a href="#" > Admin</a>
              
                 </li>
             </ul>
@@ -142,18 +193,9 @@
                                 <a ui-sref="relationlistView" ui-sref-active="active">Relations</a>
                             </li>
                               <li>
-                                <a ui-sref="typeOfArrangementListView" ui-sref-active="active">Type of Arrangement</a>
+                                <a ui-sref="typeOfArrangementCreateMainView" ui-sref-active="active">Type of Arrangement</a>
                             </li>
-                          
-                        </ul>
-                    </li>
-                     <li>
-                        <a ui-sref="farmerlistview" ui-sref-active="active"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Setup <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="" class="collapse">
-                            <li>
+                              <li>
                                 <a ui-sref="farmerlistView"" ui-sref-active="active">Regions</a>
                             </li>
                             <li>
@@ -162,13 +204,52 @@
                              <li>
                                 <a ui-sref="farmerlistView" ui-sref-active="active">Farmer Types</a>
                             </li>
+                              <li>
+                                <a ui-sref="regionCreateMainView" ui-sref-active="active">Add Region</a>
+                            </li>
+                              <li>
+                                <a ui-sref="districtCreateMainView" ui-sref-active="active">Add District</a>
+                            </li>
                            
                               <li>
-                                <a ui-sref="religionEditView" ui-sref-active="active">Add Religion</a>
+                                <a ui-sref="religionCreateMainView" ui-sref-active="active">Add Religion</a>
                             </li>
                               <li>
-                                <a ui-sref="LBCEditView" ui-sref-active="active">Add LBC</a>
+                                <a ui-sref="LBCCreateMainView" ui-sref-active="active">Add LBC</a>
                             </li>
+                             <li>
+                                <a ui-sref="idTypeCreateMainView" ui-sref-active="active">Add ID Type</a>
+                            </li>
+                             <li>
+                                <a ui-sref="educationCreateMainView" ui-sref-active="active">Add Edu. Level</a>
+                            </li>
+                               <li>
+                                <a ui-sref="maritalCreateMainView" ui-sref-active="active">Add Marital Status</a>
+                            </li>
+                           <li>
+                                <a ui-sref="ownershipCreateMainView" ui-sref-active="active">Add Source of Ownership</a>
+                            </li>
+                             <li>
+                                <a ui-sref="cocoaTypeCreateMainView" ui-sref-active="active">Add Cocoa Type</a>
+                            </li>
+                              <li>
+                                <a ui-sref="sourceOfMaterialCreateMainView" ui-sref-active="active">Add Source of Material</a>
+                            </li>
+                               <li>
+                                <a ui-sref="sourceOfLabourCreateMainView" ui-sref-active="active">Add Source of Labour</a>
+                            </li>
+                               <li>
+                                <a ui-sref="relationCreateMainView" ui-sref-active="active">Add Relation</a>
+                            </li>
+                        </ul>
+                    </li>
+                     <li>
+                        <a ui-sref="farmerlistview" ui-sref-active="active"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Setup <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="" class="collapse">
+                          
                         </ul>
                     </li>
                                     

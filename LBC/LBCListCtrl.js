@@ -5,16 +5,14 @@
     angular
         .module("cocoafarmersdb")
         .controller("LBCListCtrl",
-                    ["LBCResource",
+                    ["LBC",
                         LBCListCtrl]);
 
-    function LBCListCtrl(LBCResource) {
+    function LBCListCtrl(LBC) {
           /*jshint validthis: true */
         var vm = this;
 
-        LBCResource.query(function(data) {
-            vm.LBC = data;
-        });
+   vm.LBC=LBC;
        
     }
 }());

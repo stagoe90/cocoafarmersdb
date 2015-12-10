@@ -1,0 +1,64 @@
+  <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <div class="panel panel-green">
+    <div class="panel-heading" style="font-size:large">
+        Marital Status
+    </div>
+             
+          
+          
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="MaritalForm"
+      novalidate>
+    <fieldset>
+        <legend>Marital Status</legend>
+        <div class="form-group"
+             ng-class="{'has-error':MaritalForm.inputMaritalStatus.$invalid &&
+                                    MaritalForm.inputMaritalStatus.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputMaritalStatus">Marital Status</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputMaritalStatus"
+                       name="inputMaritalStatus"
+                       type="text"
+                       placeholder="Marital Status(required)"
+                       ng-model="vm.marital.MaritalStatus"
+                       />
+            </div>
+         
+        </div>
+     
+        
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(MaritalForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+        </div>
+           </div>

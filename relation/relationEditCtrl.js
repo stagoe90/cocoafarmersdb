@@ -42,7 +42,7 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
-                vm.relation.$save(function (data) {
+                vm.relation.$update(function (data) {
                     toastr.success("Save Successful");
                 });
             } else {

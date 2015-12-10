@@ -29,8 +29,8 @@ form legend {
     text-decoration: none;
 }
 .wizard .active {
-    background: #5cb85c;
-    color: #fff;
+    background: #ffcc99;
+    color: #000;
 }
 
 

@@ -12,7 +12,7 @@
           /*jshint validthis: true */
         var vm = this;
         
-          console.log(farmer);
+        
 
         // Assign customers to scope
         vm.farmer = farmer;

@@ -1,0 +1,56 @@
+   <div id="page-wrapper">
+        
+        </div>
+
+            <div class="container-fluid">  
+                  <form class="form-inline" id="form1">
+        
+           <!-- <label >Search</label>-->
+            <input type="text" ng-model="vm.id " ng-hide="false" class="form-control"  placeholder="Search">
+       
+    </form>         
+ <section id="main-content">
+          <section class="wrapper">
+    
+<div class="panel panel-yellow">
+    <div class="panel-heading"
+         style="font-size:large">LBC List
+    </div>
+    
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+             
+                <td>LBC Name</td>
+                
+      
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="LBC in vm.LBC |filter:{ LBCName: vm.id }">
+                
+               
+             
+                 <td>{{ LBC.LBCName}}</td>
+             
+                
+              
+                <td>
+                    <a class="btn btn-yellow"
+                           ui-sref="LBCEditMainView({LBCID: LBC.LBCID})">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</section>
+</section>
+</div>
+</div>

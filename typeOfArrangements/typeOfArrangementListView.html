@@ -29,18 +29,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="typeofarrangement in vm.typeofarrangement |filter:search">
+            <tr ng-repeat="typeOfArrangement in vm.typeOfArrangement |filter:search">
                 
-                <td>
-                    <a ui-sref="typeofarrangementDetail({RelationID: relation.RelationID})">
-                    {{ typeofarrangement.FarmypeOfarrangement}}</a>
-                </td>
-                <td>{{ typeofarrangement.TypeOFArrangementName }}</td>
+               
+                <td>{{ typeOfArrangement.TypeOFArrangementName }}</td>
   
               
                 <td>
                     <a class="btn btn-primary"
-                       ui-sref="relationEditView({id: relation.RelationID})">
+                       ui-sref="typeOfArrangementEditMainView({FarmypeOfarrangement: typeOfArrangement.FarmypeOfarrangement})">
                         Edit
                     </a>
                 </td>

@@ -2,7 +2,10 @@
 
             <div class="container-fluid">
 
-               
+        
+           <!-- <label >Search</label>-->
+            <input type="text" ng-model="vm.id" ng-hide="true" class="form-control"  placeholder="Search">
+          
           
  <section id="main-content">
           <section class="wrapper">
@@ -10,6 +13,26 @@
       novalidate>
     <fieldset>
         <legend>Farm Information</legend>
+      <!--   <div class="form-group"
+             ng-class="{'has-error':farmForm.inputFarmerCount.$invalid &&
+                                    farmForm.inputFarmerCount.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerCount">Farmer</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerCount"
+                       name="inputFarmerCount"
+                       type="text"
+                       placeholder="Farm ID (required)"
+                       ng-model="vm.farm.FarmerCount"
+                       required
+                        ng-minlength="4"
+                        ng-maxlength="12"/>
+            </div>
+           
+        </div>-->
+        
         <div class="form-group"
              ng-class="{'has-error':farmForm.inputFarmID.$invalid &&
                                     farmForm.inputFarmID.$dirty}">
@@ -19,13 +42,12 @@
             <div class="col-md-4">
                 <input class="form-control"
                        id="inputFarmID"
+                       
                        name="inputFarmID"
                        type="text"
                        placeholder="Farm ID (required)"
                        ng-model="vm.farm.FarmID"
-                       required
-                        ng-minlength="4"
-                        ng-maxlength="12"/>
+                     />
             </div>
             <span class="help-block has-error">
                 <span ng-show="farmForm.inputFarmerSurname.$error.required">
@@ -39,37 +61,37 @@
                 </span>
             </span>
         </div>
-        <div class="form-group" 
-             ng-class="{'has-error':farmerForm.inputRegionName.$invalid &&
-                                    farmerForm.inputRegionName.$dirty}">
+       <div class="form-group" 
+             ng-class="{'has-error':farmForm.inputRegionName.$invalid &&
+                                    farmForm.inputRegionName.$dirty}">
             <label class="col-md-2 control-label"
                    for="inputLBCName">Region</label>
 
             <div class="col-md-4">
              <select class="form-control" 
-              ng-model="vm.farmer.RegionID" ng-options="Region.RegionID as Region.RegionName for Region in vm.Region">
+              ng-model="vm.farm.FarmRegion" ng-options="Region.RegionID as Region.RegionName for Region in vm.Region">
                 <option value="">-- Select Region --</option></select>
             </div>
             <span class="help-block has-error">
-                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                <span ng-show="farmForm.RegionID.$error.required">
                     Region is required
                 </span>
                 
             </span>
         </div>
           <div class="form-group" 
-             ng-class="{'has-error':farmerForm.inputDistrictName.$invalid &&
-                                    farmerForm.inputDistrictName.$dirty}">
+             ng-class="{'has-error':farmForm.inputDistrictName.$invalid &&
+                                    farmForm.inputDistrictName.$dirty}">
             <label class="col-md-2 control-label"
                    for="inputDistrictName">District</label>
 
             <div class="col-md-4">
              <select class="form-control" 
-              ng-model="vm.farmer.DistrictID" ng-options="District.DistrictID as District.DistrictName for District in vm.District">
+              ng-model="vm.farm.FarmDistrict" ng-options="District.DistrictID as District.DistrictName for District in vm.District">
                 <option value="">-- Select District --</option></select>
             </div>
             <span class="help-block has-error">
-                <span ng-show="farmerForm.FarmerLBCID.$error.required">
+                <span ng-show="farmForm.DistrictID.$error.required">
                     District  is required
                 </span>
                 
@@ -102,10 +124,10 @@
                 <input class="form-control"
                        id="inputFarmYear"
                        name="inputFarmYear"
-                       type="date"
+                       type="text"
                        placeholder="dob (required)"
                        ng-model="vm.farm.FarmYear"
-                       required
+                      
                        />
             </div>
             <span class="help-block has-error">
@@ -127,9 +149,8 @@
                        name="inputFarmSize"
                         placeholder="Farm Size (required)"
                        ng-model="vm.farm.FarmSize"
-                       required
-                        ng-minlength="4"
-                        ng-maxlength="12"/>
+                    
+                       />
             </div>
             <span class="help-block has-error"
                   ng-show="farmForm.FarmSize.$invalid ">
@@ -149,7 +170,7 @@
                        type="text"
                        placeholder="Area Under Cultivation"
                        ng-model="vm.farm.AreaUnderCultivation"
-                       required
+                      
                         />
             </div>
           
@@ -167,7 +188,7 @@
                        type="text"
                        placeholder="Number Of Cocoa Tress"
                        ng-model="vm.farm.FarmNumberOfCocoaTress"
-                       required
+                     
                        />
             </div>
            
@@ -185,7 +206,7 @@
                        type="text"
                        placeholder="Number Of Shade Trees"
                        ng-model="vm.farm.FarmNumberOfShadeTrees"
-                       required
+                     
                        />
             </div>
            
@@ -221,10 +242,10 @@
                 <input class="form-control"
                        id="inputFarmAgeOfCocoaTrees"
                        name="inputFarmAgeOfCocoaTrees"
-                       type="date"
+                       type="text"
                        placeholder="Age Of Cocoa Trees (required)"
                        ng-model="vm.farm.FarmAgeOfCocoaTrees"
-                       required
+                      
                        />
             </div>
             <span class="help-block has-error">
@@ -305,9 +326,8 @@
                        name="inputFarmCaretakers"
                         placeholder="Caretakers(required)"
                        ng-model="vm.farm.FarmCaretakers"
-                       required
-                        ng-minlength="4"
-                        ng-maxlength="12"/>
+                   
+                      />
             </div>
             <span class="help-block has-error"
                   ng-show="farmForm.FarmCaretakers.$invalid ">
@@ -372,8 +392,8 @@
             </span>
         </div>-->
        <div class="form-group"
-             ng-class="{'has-error':farmerForm.inputFarmAgricActivity.$invalid &&
-                                    farmerForm.inputFarmAgricActivity.$dirty}">
+             ng-class="{'has-error':farmForm.inputFarmAgricActivity.$invalid &&
+                                    farmForm.inputFarmAgricActivity.$dirty}">
             <label class="col-md-2 control-label" for="inputFarmAgricActivity">Agric Activity?</label>
 
             <div class="col-md-4">
@@ -390,10 +410,10 @@
         
        
         <div class="form-group"
-             ng-class="{'has-error':farmerForm.inputFarmAgricActivityComment.$invalid &&
-                                    farmerForm.inputFarmAgricActivityComment.$dirty}">
+             ng-class="{'has-error':farmForm.inputFarmAgricActivityComment.$invalid &&
+                                    farmForm.inputFarmAgricActivityComment.$dirty}">
             <label class="col-md-2 control-label"
-                   for="inputFarmerFarmAgricActivityComment">Agric Activity Comments</label>
+                   for="inputFarmAgricActivityComment">Agric Activity Comments</label>
 
             <div class="col-md-4">
                 <input class="form-control"
@@ -402,7 +422,7 @@
                        type="textarea"
                        placeholder="Agric Activity Comments"
                        ng-model="vm.farm.FarmAgricActivityComment"
-                       required
+                     
                        />
             </div>
            
@@ -415,7 +435,7 @@
                     <span>
                         <button class="btn btn-warning"
                                 style="width:80px;margin-right:10px"
-                                ng-click="vm.submit(farmerForm.$valid)">
+                                ng-click="vm.submit(farmForm.$valid)">
                             Save
                         </button>
                     </span>

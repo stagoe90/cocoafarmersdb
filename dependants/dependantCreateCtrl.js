@@ -11,26 +11,29 @@
     angular
         .module("cocoafarmersdb")
         .controller("dependantCreateCtrl",
-        ["dependantResource","relationResource","educationResource","$state",
+        ["dependantResource","relationResource","educationResource","$state","$stateParams",
             dependantCreateCtrl]);
 
 
-    function dependantCreateCtrl(dependantResource,relationResource,educationResource,$state) {
+    function dependantCreateCtrl(dependantResource,relationResource,educationResource,$state,$stateParams) {
         /*jshint validthis: true */
         /*jshint newcap: false */
         
         var vm = this;
+        
+          vm.id=$stateParams.FarmerCount;
         vm.dependant= new dependantResource();
 
-        
-         educationResource.query(function(data) {
-            vm.education = data;
+         relationResource.query(function(data) {
+            vm.Relation = data;
         });
         
+        educationResource.query(function(data) {
+         vm.Education = data;
+      });
         
-          relationResource.query(function(data) {
-            vm.relation = data;
-        });
+        
+    
 
         vm.open = function ($event) {
             $event.preventDefault();
@@ -41,8 +44,9 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
+                 vm.dependant.FarmerCount=vm.id;
                 vm.dependant.$save(function (data) {
-                     $state.go('farmerlistView');
+                    $state.go("farmerDetailView",{FarmerCount:vm.id});
                     toastr.success("Save Successful");
                 });
             } else {
@@ -51,7 +55,7 @@
         };
 
         vm.cancel = function () {
-            $state.go('farmerlistView');
+            $state.go("farmerDetailView",{FarmerCount:vm.id});
         };
 
       

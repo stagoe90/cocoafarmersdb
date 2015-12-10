@@ -5,17 +5,17 @@
     angular
         .module("cocoafarmersdb")
         .controller("typeOfArrangementListCtrl",
-                    ["typeofarrangement",
+                    ["typeOfArrangement",
                         typeOfArrangementListCtrl]);
 
-    function typeOfArrangementListCtrl(typeofarrangement) {
+    function typeOfArrangementListCtrl(typeOfArrangement) {
           /*jshint validthis: true */
         var vm = this;
         
-          console.log(typeofarrangement);
+          console.log(typeOfArrangement);
 
         // Assign customers to scope
-        vm.typeofarrangement = typeofarrangement;
+        vm.typeOfArrangement = typeOfArrangement;
 
       //  farmerResource.query(function(data) {
         //    vm.farmers = data;

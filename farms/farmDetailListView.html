@@ -1,12 +1,28 @@
    <div id="page-wrapper">
-       
+         <div class="col-md-4 col-md-offset-0">
+                    <span>
+                        <button class="btn btn-green"
+                                style="width:120px;margin-right:10px"
+                                ng-click="vm.addFarm()">
+                            Add farm
+                        </button>
+                    </span>
+                 <!--   <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>-->
+            </div>
+        </div>
 
             <div class="container-fluid">  
              
   <form class="form-inline" id="form1">
         
            <!-- <label >Search</label>-->
-            <input type="text" ng-model="vm.id" ng-hide="true" class="form-control"  placeholder="Search">
+            <input type="text" ng-model="vm.id " ng-hide="true" class="form-control"  placeholder="Search">
        
     </form>         
  <section id="main-content">
@@ -23,6 +39,7 @@
 
             <thead>
             <tr>
+                 
                 <td>Farm ID.</td>
                 <td>Region</td>
                 <td>District</td>
@@ -37,8 +54,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="farm in vm.farm |filter:vm.id">
-                
+            <tr ng-repeat="farm in vm.farm |filter:{ FarmerCount: vm.id }">
+             
                 <td>
                     <a ui-sref="farmerDetailView({FarmerCount: farm.FarmerCount})">
                     {{ farm.FarmID}}</a>
@@ -54,8 +71,8 @@
                
               
                 <td>
-                    <a class="btn btn-warning"
-                       ui-sref="farmerEditView.farmDetails({FarmCount: farm.FarmCount})">
+                    <a class="btn btn-green"
+                       ui-sref="farmEditFarmView({FarmCount: farm.FarmCount})">
                         Edit
                     </a>
                 </td>

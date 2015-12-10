@@ -11,25 +11,17 @@
     angular
         .module("cocoafarmersdb")
         .controller("LBCEditCtrl",
-        ["LBCResource","$state",
+        ["LBC",
             LBCEditCtrl]);
 
 
-    function LBCEditCtrl(LBCResource,LBC,$state) {
+    function LBCEditCtrl(LBC) {
         /*jshint validthis: true */
         var vm = this;
         
          vm.LBC = LBC;
 
-
-
-       
-        if (vm.LBCID && vm.LBC.LBC) {
-            vm.title = "Edit: " + vm.LBC.LBCID;
-        }
-        else {
-            vm.title = "New LBC";
-        }
+     
 
         vm.open = function ($event) {
             $event.preventDefault();

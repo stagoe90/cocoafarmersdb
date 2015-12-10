@@ -31,16 +31,13 @@
             <tbody>
             <tr ng-repeat="relation in vm.relation |filter:search">
                 
-                <td>
-                    <a ui-sref="relationDetail({RelationID: relation.RelationID})">
-                    {{ relation.RelationID}}</a>
-                </td>
+               
                 <td>{{ relation.RelsationName }}</td>
   
-              
-                <td>
-                    <a class="btn btn-primary"
-                       ui-sref="relationEditView({id: relation.RelationID})">
+             
+                  <td>
+                    <a class="btn btn-yellow"
+                           ui-sref="relationEditMainView({relationID: relationE.relationID})">
                         Edit
                     </a>
                 </td>

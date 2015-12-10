@@ -93,6 +93,8 @@
                   ng-model="vm.dependant.DependantRelation" ng-options="Relation.RelationID as Relation.RelsationName for Relation in vm.Relation">
                 <option value="">-- Select Relation --</option></select>
             </div>
+            
+            
             <span class="help-block has-error">
                 <span ng-show="dependantsForm.DependantRelation.$error.required">
                    Relation is required

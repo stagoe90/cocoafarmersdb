@@ -9,9 +9,13 @@
                  farmerResource]);
 
     function farmerResource($resource) {
-        return $resource("http://172.16.5.11/cocoadb/api/IDType/:IDTypeID");
+        return $resource("http://172.16.5.11/cocoadb/api/IDType/:IDTypeID", null,
+       {
+                
+                    'update': { method: 'PUT' }
+                });
     }
-    
-    
+
+
 
 }());

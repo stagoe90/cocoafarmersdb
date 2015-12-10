@@ -1,9 +1,5 @@
 
 /*jshint latedef: nofunc */
-/*jslint node: true */
-/*global alert */
-/*global toastr */
-/*global $state */
 (function () {
     "use strict";
 

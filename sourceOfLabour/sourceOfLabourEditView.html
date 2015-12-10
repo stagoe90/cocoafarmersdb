@@ -1,0 +1,64 @@
+  <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <div class="panel panel-green">
+    <div class="panel-heading" style="font-size:large">
+        Source of Labour
+    </div>
+             
+          
+          
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="SourceOfLabourForm"
+      novalidate>
+    <fieldset>
+        <legend>Source of Labour</legend>
+        <div class="form-group"
+             ng-class="{'has-error':SourceOfLabourForm.inputSourceOfLabourName.$invalid &&
+                                    SourceOfLabourForm.inputSourceOfLabourName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputSourceOfLabourName">Source of Labour</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputSourceOfLabourName"
+                       name="inputSourceOfLabourName"
+                       type="text"
+                       placeholder="Source of Labour (required)"
+                       ng-model="vm.sourceOfLabour.SourceOfLabourName"
+                       />
+            </div>
+         
+        </div>
+     
+        
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(SourceOfLabourForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+        </div>
+           </div>

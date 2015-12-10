@@ -1,0 +1,114 @@
+  <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+               
+          
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="farmerDependantAgesForm"
+      novalidate>
+    <fieldset>
+        <legend>Age and Edu. Level of Chd.</legend>
+          <div class="form-group"
+             ng-class="{'has-error':farmerDependantAgesForm.inputFarmerDependantAgeGroup.$invalid &&
+                                    farmerDependantAgesForm.inputFarmerDependantAgeGroup.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerDependantAgeGroup"> Age Category</label>
+
+            <div class="col-md-4">
+             <select class="form-control"
+                   ng-model="vm.farmerDependantAge.DependantAgeID" ng-options="DependantAge.DependantAgeID as DependantAge.DependantAgeName for DependantAge in vm.DependantAge">
+                <option value="">-- Select Age Category --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerDependantAgesForm.FarmerDependantAgeGroup.$error.required">
+                   Age Category is required
+                </span>
+                
+            </span>
+        </div>
+        
+         
+         <div class="form-group"
+             ng-class="{'has-error':farmerDependantAgesForm.inputFarmerDependantAgeNoChildren.$invalid &&
+                                    farmerDependantAgesForm.inputFarmerDependantAgeNoChildren.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerDependantAgeNoChildren">No. of Children</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerDependantAgeNoChildren"
+                       name="inputFarmerDependantAgeNoChildren"
+                       type="text"
+                       placeholder="No. of Children"
+                       ng-model="vm.farmerDependantAge.FarmerDependantAgeNoChildren"
+                     />
+            </div>
+        </div>
+      
+     <div class="form-group"
+             ng-class="{'has-error':farmerDependantAgesForm.inputFarmerDependantAgeEducation.$invalid &&
+                                    farmerDependantAgesForm.inputFarmerDependantAgeEducation.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerDependantAgeEducation">Edu. Level</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+                  ng-model="vm.farmerDependantAge.FarmerDependantAgeEducation" ng-options="Education.EducationID as Education.EducationLevel for Education in vm.Education">
+                <option value="">-- Select Edu. Level --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="farmerDependantAgesForm.FarmerDependantAgeEducation.$error.required">
+                   Edu. Level is required
+                </span>
+                
+            </span>
+        </div>
+        
+         
+         <div class="form-group"
+             ng-class="{'has-error':farmerDependantAgesForm.inputFarmerDependantAgeEducationNo.$invalid &&
+                                    farmerDependantAgesForm.inputFarmerDependantAgeEducationNo.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmerDependantAgeEducationNo">No. of Children</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerDependantAgeEducationNo"
+                       name="inputFarmerDependantAgeEducationNo"
+                       type="text"
+                       placeholder="No. of Children"
+                       ng-model="vm.farmerDependantAge.FarmerDependantAgeEducationNo"
+                     />
+            </div>
+        </div>
+    
+
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-warning"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(farmerForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+        </div>

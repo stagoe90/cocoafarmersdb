@@ -1,0 +1,64 @@
+  <div id="page-wrapper">
+
+            <div class="container-fluid">
+                <div class="panel panel-green">
+    <div class="panel-heading" style="font-size:large">
+        Source of Material
+    </div>
+             
+          
+          
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="SourceOfMaterialForm"
+      novalidate>
+    <fieldset>
+        <legend>Source of Material</legend>
+        <div class="form-group"
+             ng-class="{'has-error':SourceOfMaterialForm.inputSourceOfMaterialName.$invalid &&
+                                    SourceOfMaterialForm.inputSourceOfMaterialName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputSourceOfMaterialName">Source of Material</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputSourceOfMaterialName"
+                       name="inputSourceOfMaterialName"
+                       type="text"
+                       placeholder="Source of Material (required)"
+                       ng-model="vm.sourceOfMaterial.SourceOfMaterialName"
+                       />
+            </div>
+         
+        </div>
+     
+        
+
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-primary"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(SourceOfMaterialForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+        </div>
+           </div>

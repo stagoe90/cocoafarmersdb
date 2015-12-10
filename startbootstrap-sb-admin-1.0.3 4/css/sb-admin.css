@@ -66,7 +66,7 @@ body {
 .top-nav>.open>a:hover,
 .top-nav>.open>a:focus {
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #ffcc99;
 }
 
 .top-nav>.open>.dropdown-menu {
@@ -137,7 +137,7 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #5cb85c !important;
+        background-color: #ffcc99 !important;
     }
 }
 
@@ -175,21 +175,21 @@ ul.alert-dropdown {
 }
 
 .panel-green {
-    border-color: #5cb85c;
+    border-color: #ffcc99;
 }
 
 .panel-green > .panel-heading {
-    border-color: #5cb85c;
+    border-color: #ffcc99;
     color: #fff;
-    background-color: #5cb85c;
+    background-color: #ffcc99;
 }
 
 .panel-green > a {
-    color: #5cb85c;
+    color: #ffcc99;
 }
 
 .panel-green > a:hover {
-    color: #3d8b3d;
+    color: #ffcc99;
 }
 
 .panel-red {
@@ -211,21 +211,21 @@ ul.alert-dropdown {
 }
 
 .panel-yellow {
-    border-color: #ffcd00;
+    border-color: #9999ff;
 }
 
 .panel-yellow > .panel-heading {
-    border-color: #ffcd00;
+    border-color: #9999ff;
     color: #fff;
-    background-color: #ffcd00;
+    background-color: #9999ff;
 }
 
 .panel-yellow > a {
-    color: #ffcd00;
+    color: #9999ff;
 }
 
 .panel-yellow > a:hover {
-    color: #ffcd00;
+    color: #9999ff;
 }
 
 
@@ -242,47 +242,47 @@ ul.alert-dropdown {
 }
  
 .btn-yellow {
-    background: #ffcd00;
+    background: #9999ff;
     color: #ffffff;
 }
  
 .btn-yellow:hover, .btn-yellow:focus, .btn-yellow:active, .btn-yellow.active, .open > .dropdown-toggle.btn-yellow {
-    background: #ffcd00;
+    background: #9999ff;
 }
  
 .btn-yellow:active, .btn-yellow.active {
-    background: #ffcd00;
+    background: #9999ff;
     box-shadow: none;
 }
 
 .panel-purple {
-    border-color: #ff6600;
+    border-color: #0099ff;
 }
 
 .panel-purple > .panel-heading {
-    border-color: #ff6600;
+    border-color: #0099ff;
     color: #fff;
-    background-color: #ff6600;
+    background-color: #0099ff;
 }
 
 .panel-purple > a {
-    color: #ff6600;
+    color: #0099ff;
 }
 
 .panel-purple > a:hover {
-    color: #ff6600;
+    color: #0099ff;
 }
 
 .btn-purple {
-    background: #ff6600;
-    color: #ff6600;
+    background: #0099ff;
+    color: #fff;
 }
  
 .btn-purple:hover, .btn-purple:focus, .btn-purple:active, .btn-purple.active, .open > .dropdown-toggle.btn-purple {
-    background: #ff6600;
+    background: #0099ff;
 }
  
 .btn-purple:active, .btn-purple.active {
-    background: #ff6600;
+    background: #0099ff;
     box-shadow: none;
 }

@@ -11,16 +11,17 @@
     angular
         .module("cocoafarmersdb")
         .controller("farmerCreateCtrl",
-        ["farmerResource","LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","typeOfArrangementResource","$state",
+        ["farmerResource","LBCResource","IDTypeResource","educationResource","religionResource","maritalResource","regionResource","districtResource","typeOfArrangementResource","dependantAgeResource","relationResource","$state",
             farmerCreateCtrl]);
 
 
-    function farmerCreateCtrl(farmerResource,LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,typeOfArrangementResource,$state) {
+    function farmerCreateCtrl(farmerResource,LBCResource,IDTypeResource,educationResource,religionResource,maritalResource,regionResource,districtResource,typeOfArrangementResource,dependantAgeResource,relationResource,$state) {
         /*jshint validthis: true */
         /*jshint newcap: false */
         
         var vm = this;
         vm.farmer= new farmerResource();
+      
         
 
 
@@ -33,8 +34,8 @@
         });
         
            educationResource.query(function(data) {
-            vm.Education = data;
-        });
+         vm.Education = data;
+      });
         
           religionResource.query(function(data) {
             vm.Religion = data;
@@ -56,6 +57,13 @@
             vm.TypeOfArrangement = data;
         });
         
+     //    dependantAgeResource.query(function(data) {
+       //     vm.DependantAge = data;
+    //    });
+        
+         relationResource.query(function(data) {
+            vm.Relation = data;
+        });
         
         
 
@@ -71,7 +79,7 @@
         vm.submit = function (isValid) {
             if (isValid) {
                 vm.farmer.$save(function (data) {
-                     $state.go('farmerlistView');
+                       $state.go("farmerDetailView",{FarmerCount:vm.farmer.FarmerCount});
                     toastr.success("Save Successful");
                 });
             } else {

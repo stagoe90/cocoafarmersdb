@@ -11,16 +11,19 @@
     angular
         .module("cocoafarmersdb")
         .controller("farmCreateFarmCtrl",
-        ["sourceOfLabourResource","sourceOfMaterialResource","ownershipResource","cocoaTypeResource","regionResource","districtResource","farmResource","typeOfArrangementResource","ownershipResource",
-            "$state",
+        ["farmResource","ownershipResource","cocoaTypeResource","regionResource","districtResource","typeOfArrangementResource","ownershipResource","sourceOfLabourResource","sourceOfMaterialResource",
+            "$state","$stateParams",
             farmCreateFarmCtrl]);
 
 
-    function farmCreateFarmCtrl(sourceOfLabourResource,sourceOfMaterialResource,farmResource,cocoaTypeResource,regionResource,districtResource,farm,typeOfArrangementResource,ownershipResource,$state) {
+    function farmCreateFarmCtrl(farmResource,farm,cocoaTypeResource,regionResource,districtResource,typeOfArrangementResource,ownershipResource,sourceOfLabourResource,sourceOfMaterialResource,$state,$stateParams) {
         /*jshint validthis: true */
+          /*jshint newcap: false */
         var vm = this;
         
-         vm.farm = farm;
+          vm.id=$stateParams.FarmerCount;
+          
+           vm.farm= new farmResource();
 
           regionResource.query(function(data) {
             vm.Region = data;
@@ -43,9 +46,6 @@
             vm.Ownership = data;
         });
 
-  sourceOfMaterialResource.query(function(data) {
-            vm.SourceOfMaterial = data;
-        });
         
          sourceOfMaterialResource.query(function(data) {
             vm.SourceOfMaterial = data;
@@ -56,12 +56,12 @@
         });
 
        
-        if (vm.farm && vm.farm.FarmCount) {
-            vm.title = "Edit: " + vm.farmer.FarmerCount;
-        }
-        else {
-            vm.title = "New Farmer";
-        }
+      //  if (vm.farm && vm.farm.FarmCount) {
+           // vm.title = "Edit: " + vm.farmer.FarmerCount;
+       // }
+        //else {
+          //  vm.title = "New Farmer";
+        //}
 
         vm.open = function ($event) {
             $event.preventDefault();
@@ -72,8 +72,10 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
+                  vm.farm.FarmerCount=vm.id;
                 vm.farm.$save(function (data) {
                     toastr.success("Save Successful");
+                     $state.go("farmerDetailView",{FarmerCount:vm.id});
                 });
             } else {
                 alert("Please correct the validation errors first.");
@@ -81,7 +83,7 @@
         };
 
         vm.cancel = function () {
-            $state.go('farmerlistView',{});
+            $state.go("farmerDetailView",{FarmerCount:vm.id});
         };
 
       

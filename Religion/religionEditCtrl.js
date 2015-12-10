@@ -11,25 +11,17 @@
     angular
         .module("cocoafarmersdb")
         .controller("religionEditCtrl",
-        ["religionResource",
+        ["religion",
             religionEditCtrl]);
 
 
-    function religionEditCtrl(religionResource,religion) {
+    function religionEditCtrl(religion) {
         /*jshint validthis: true */
         var vm = this;
         
          vm.religion = religion;
 
-
-
-       
-        if (vm.ReligionID && vm.religion.ReligionID) {
-            vm.title = "Edit: " + vm.religion.ReligionID;
-        }
-        else {
-            vm.title = "New Religion";
-        }
+     
 
         vm.open = function ($event) {
             $event.preventDefault();
@@ -40,7 +32,7 @@
 
         vm.submit = function (isValid) {
             if (isValid) {
-                vm.religion.save(function (data) {
+                vm.religion.$update(function (data) {
                     toastr.success("Save Successful");
                 });
             } else {
@@ -52,18 +44,5 @@
             $state.go('farmerListView');
         };
 
-        vm.addTags = function (tags) {
-            if (tags) {
-                var array = tags.split(',');
-                vm.product.tags = vm.product.tags ? vm.product.tags.concat(array) : array;
-                vm.newTags = "";
-            } else {
-                alert("Please enter one or more tags separated by commas");
-            }
-        };
-
-        vm.removeTag = function (idx) {
-            vm.product.tags.splice(idx, 1);
-        };
     }
 }());

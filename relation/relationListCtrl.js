@@ -12,7 +12,7 @@
           /*jshint validthis: true */
         var vm = this;
         
-          console.log(relation);
+      
 
         // Assign customers to scope
         vm.relation = relation;

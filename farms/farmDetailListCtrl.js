@@ -5,20 +5,24 @@
     angular
         .module("cocoafarmersdb")
         .controller("farmDetailListCtrl",
-                    ["farmResource",
+                    ["farm","$stateParams","$state",
                         farmDetailListCtrl]);
 
-    function farmDetailListCtrl(farmResource) {
+    function farmDetailListCtrl(farm,$stateParams,$state) {
           /*jshint validthis: true */
         var vm = this;
+
+        vm.id=$stateParams.FarmerCount;
         
-        
-        
-          //console.log(farm);
+          console.log(farm);
 
         // Assign customers to scope
-       // vm.farm = farm;
-
+        vm.farm = farm;
+        
+           vm.addFarm = function () {
+            $state.go("farmerCreateView.farmDetails", { FarmerCount: $stateParams.FarmerCount });
+        };
+                                                        
       //  farmerResource.query(function(data) {
         //    vm.farmers = data;
         //});

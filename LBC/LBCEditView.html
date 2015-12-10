@@ -1,8 +1,12 @@
-  <div id="page-wrapper">
+ <div id="page-wrapper">
 
             <div class="container-fluid">
-
-               
+                <div class="panel panel-green">
+    <div class="panel-heading" style="font-size:large">
+        LBC
+    </div>
+             
+          
           
  <section id="main-content">
           <section class="wrapper">
@@ -23,18 +27,17 @@
                        type="text"
                        placeholder="LBC Name (required)"
                        ng-model="vm.LBC.LBCName"
-                        ng-minlength="4"
-                        ng-maxlength="12"/>
+                    />
             </div>
             <span class="help-block has-error">
                 <span ng-show="LBCForm.inputLBCName.$error.required">
-                    Religion ID is required
+                    LBC is required
                 </span>
                 <span ng-show="LBCForm.inputLBCName.$error.minlength">
-                    Religion ID should be not be below 4 characters
+                    LBC should be not be below 4 characters
                 </span>
                 <span ng-show="LBCForm.inputLBCName.$error.maxlength">
-                    Religion ID should not exceed 12 charactersFarmer Number
+                    LBC should not exceed 12 charactersFarmer Number
                 </span>
             </span>
         </div>
@@ -68,3 +71,4 @@
             <!-- /.container-fluid -->
 
         </div>
+           </div>

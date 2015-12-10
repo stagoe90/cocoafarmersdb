@@ -9,7 +9,7 @@
                  dependantResource]);
 
     function dependantResource($resource) {
-        return $resource("http://172.16.5.11/cocoadb/api/Dependent/:DependentID", null,
+        return $resource("http://172.16.5.11/cocoadb/api/Dependent/:DependantID", null,
        {
                 
                     'update': { method: 'PUT' }

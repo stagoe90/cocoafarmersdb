@@ -9,9 +9,13 @@
                  maritalResource]);
 
     function maritalResource($resource) {
-        return $resource("http://172.16.5.11/cocoadb/api/Marital/:MaritalID");
+        return $resource("http://172.16.5.11/cocoadb/api/Marital/:MaritalID", null,
+       {
+                
+                    'update': { method: 'PUT' }
+                });
     }
-    
-    
+
+
 
 }());

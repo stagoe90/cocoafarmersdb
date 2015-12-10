@@ -1,4 +1,4 @@
-  <div id="page-wrapper">
+ <!-- <div id="page-wrapper">
 
             <div class="container-fluid">
 
@@ -21,6 +21,164 @@
 
 </div>
 
+</section>
+</section>
+  </div>
+            <!-- /.container-fluid -->
+
+     <!--  </div>-->
+       <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+               
+          
+ <section id="main-content">
+          <section class="wrapper">
+<form class="form-horizontal" name="dependantsForm"
+      novalidate>
+    <fieldset>
+        <legend>Dependants</legend>
+      <!--  <div class="form-group"
+             ng-class="{'has-error':dependantsForm.inputFarmerCount.$invalid &&
+                                    dependantsForm.inputFarmerCount.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmID">Farmer</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputFarmerCount"
+                       name="inputFarmerCount"
+                       type="text"
+                       placeholder="Farm ID (required)"
+                       ng-model="vm.dependant.FarmerCount"
+                       required
+                        ng-minlength="4"
+                        ng-maxlength="12"/>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="dependantsForm.inputFarmerSurname.$error.required">
+                    Farmer is required
+                </span>
+                <span ng-show="dependantsForm.inputFarmerSurname.$error.minlength">
+                    Farmer should be not be below 4 characters
+                </span>
+                <span ng-show="dependantsForm.inputFarmerSurname.$error.maxlength">
+                    Farmer should not exceed 12 charactersFarmer Number
+                </span>
+            </span>
+        </div>-->
+     
+         <div class="form-group"
+             ng-class="{'has-error':dependantsForm.inputDependantName.$invalid &&
+                                    dependantsForm.inputDependantName.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputDependantName">Name</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputDependantName"
+                       name="inputDependantName"
+                       type="text"
+                       placeholder="Dependant's Name"
+                       ng-model="vm.dependant.DependantName"
+                     />
+            </div>
+        </div>
+         <div class="form-group"
+             ng-class="{'has-error':dependantsForm.inputDependantDOB.$invalid &&
+                                    dependantsForm.inputDependantDOB.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputDependantDOB">DOB</label>
+
+            <div class="col-md-4">
+                <input class="form-control"
+                       id="inputDependantDOB"
+                       name="inputDependantDOB"
+                       type="text"
+                       placeholder="dob (required)"
+                       ng-model="vm.dependant.DependantDOB"
+                       required
+                       />
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="dependantsForm.DependantDOB.$error.required">
+                   dob is required
+                </span>
+               
+            </span>
+        </div>
+        
+        
+          <div class="form-group"
+             ng-class="{'has-error':dependantsForm.inputDependantRelation.$invalid &&
+                                    dependantsForm.inputDependantRelation.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputFarmRegion">Relation</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+                  
+                  ng-model="vm.dependant.DependantRelation" ng-options="Relation.RelationID as Relation.RelsationName for Relation in vm.Relation">
+                <option value="">-- Select Relation --</option></select>
+            </div>
+            
+            
+            <span class="help-block has-error">
+                <span ng-show="dependantsForm.DependantRelation.$error.required">
+                   Relation is required
+                </span>
+                
+            </span>
+        </div>
+        
+        
+      
+    
+    <div class="form-group"
+             ng-class="{'has-error':dependantsForm.inputEducationID.$invalid &&
+                                    dependantsForm.inputEducationID.$dirty}">
+            <label class="col-md-2 control-label"
+                   for="inputEducationID">Edu. Level</label>
+
+            <div class="col-md-4">
+             <select class="form-control" 
+
+                     ng-model="vm.dependant.EducationID" ng-options="Education.EducationID as Education.EducationLevel for Education in vm.Education">
+                <option value="">-- Select Educational Level --</option></select>
+            </div>
+            <span class="help-block has-error">
+                <span ng-show="dependantsForm.EducationID.$error.required">
+                   Educational Level is required
+                </span>
+                
+            </span>
+        </div>
+        
+        
+        
+
+        <div class="form-group">
+            <div class="col-md-6 col-md-offset-2">
+                    <span>
+                        <button class="btn btn-warning"
+                                style="width:80px;margin-right:10px"
+                                ng-click="vm.submit(dependantsForm.$valid)">
+                            Save
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn btn-default"
+                                style="width:70px"
+                                ng-click="vm.cancel()">
+                            Cancel
+                        </button>
+                    </span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>
 </section>
 </section>
   </div>

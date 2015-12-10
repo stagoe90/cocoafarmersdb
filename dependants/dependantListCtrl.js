@@ -4,17 +4,28 @@
     "use strict";
     angular
         .module("cocoafarmersdb")
-        .controller("LBCListCtrl",
-                    ["LBCResource",
-                        LBCListCtrl]);
+        .controller("dependantListCtrl",
+                    ["dependant","$stateParams","$state",
+                        dependantListCtrl]);
 
-    function LBCListCtrl(LBCResource) {
+    function dependantListCtrl(dependant,$stateParams,$state) {
           /*jshint validthis: true */
         var vm = this;
 
-        LBCResource.query(function(data) {
-            vm.LBC = data;
-        });
+        vm.id=$stateParams.FarmerCount;
+        
+          console.log(dependant);
+
+        // Assign customers to scope
+        vm.dependant =dependant;
+        
+           vm.addDependant = function () {
+            $state.go("farmerCreateView.dependantView", { FarmerCount: $stateParams.FarmerCount });
+        };
+                                                        
+      //  farmerResource.query(function(data) {
+        //    vm.farmers = data;
+        //});
        
     }
 }());
